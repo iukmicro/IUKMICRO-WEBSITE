@@ -21,6 +21,47 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/responsive.css"/>
         <link rel="stylesheet" href="demos/marketing/marketing.css" />
+        <style>
+        .img-tooltip-wrapper { position: relative; display: inline-block; }
+        .custom-tooltip {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%) translateY(16px);
+            background: #3a3746;
+            color: #fff;
+            padding: 18px 28px 18px 24px;
+            border-radius: 22px;
+            white-space: pre-line;
+            z-index: 9999;
+            width: 270px;
+            text-align: left;
+            font-size: 16px;
+            font-family: inherit;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .custom-tooltip::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+            border-top: 14px solid #3a3746;
+        }
+        .img-tooltip-wrapper:hover .custom-tooltip {
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        </style>
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
             <!-- Contact Form Popup Modal -->
@@ -169,7 +210,7 @@
                 <div class="row align-items-center justify-content-md-center">
                     <div class="col-lg-6 col-md-10 position-relative md-mb-50px sm-mb-40px"> 
                         <figure class="position-relative m-0 text-center" data-anime='{ "effect": "slide", "color": "#fff2ef", "direction":"lr", "easing": "easeOutQuad", "delay":50}'>
-                            <img src="images/land3.jpg" alt="">
+                            <img src="images/newimg.jpg" alt="">
                             <figcaption class="position-absolute bottom-90px left-0px" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 800, "delay": 1000, "staggervalue": 300, "easing": "easeOutQuad" }'>
                                 <img src="https://via.placeholder.com/266x141" class="animation-float box-shadow-quadruple-large border-radius-6px" alt="">
                             </figcaption>
@@ -338,32 +379,32 @@
                         <div class="swiper-wrapper marquee-slide">
                             <!-- start client item -->
                             <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">social marketing</div>
+                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">SOCIAL MARKETING</div>
                             </div>
                             <!-- end client item -->
                             <!-- start client item -->
                             <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">telecalling</div>
+                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">TELECALLING</div>
                             </div>
                             <!-- end client item -->
                             <!-- start client item -->
                             <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">digital marketing</div>
+                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">DIGITAL MARKETING</div>
                             </div>
                             <!-- end client item --> 
                             <!-- start client item -->
                             <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">social marketing</div>
+                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">SOCIAL MARKETING</div>
                             </div>
                             <!-- end client item --> 
                             <!-- start client item -->
                             <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">telecalling</div>
+                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">TELECALLING</div>
                             </div>
                             <!-- end client item -->
                             <!-- start client item -->
                             <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">digital marketing</div>
+                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">DIGITAL MARKETING</div>
                             </div>
                             <!-- end client item --> 
                         </div> 
@@ -402,7 +443,10 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/outbound.jpg" alt="" />
+                                            <span class="img-tooltip-wrapper tooltip-flip">
+                                                <img src="images/outbound.jpg" alt="" />
+                                                <span class="custom-tooltip">Professional outbound calling services.<br>Increase your business reach.</span>
+                                            </span>
                                         </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
@@ -418,8 +462,11 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/inbound.jpg" alt="" />
-                                        </a> 
+                                            <span class="img-tooltip-wrapper tooltip-flip">
+                                                <img src="images/inbound.jpg" alt="" />
+                                                <span class="custom-tooltip">Expert inbound call handling.<br>Enhance customer satisfaction.</span>
+                                            </span>
+                                        </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Inbound Telecalling</a>
@@ -434,7 +481,10 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/market.jpg" alt="" />
+                                            <span class="img-tooltip-wrapper tooltip-flip">
+                                                <img src="images/market.jpg" alt="" />
+                                                <span class="custom-tooltip">Data-driven insights for growth.<br>Improve customer retention.</span>
+                                            </span>
                                         </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
@@ -450,8 +500,11 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/social.jpg" alt="" />
-                                        </a> 
+                                            <span class="img-tooltip-wrapper">
+                                                <img src="images/social.jpg" alt="" />
+                                                <span class="custom-tooltip">Engage your audience online.<br>Boost your brand presence.</span>
+                                            </span>
+                                        </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Social Media Marketing</a>
@@ -466,8 +519,11 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/digital1.jpg" alt="" />
-                                        </a> 
+                                            <span class="img-tooltip-wrapper">
+                                                <img src="images/digital1.jpg" alt="" />
+                                                <span class="custom-tooltip">Comprehensive digital strategies.<br>Increase your online visibility.</span>
+                                            </span>
+                                        </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Digital Marketing</a>
@@ -482,7 +538,10 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/email.jpg" alt="" />
+                                            <span class="img-tooltip-wrapper">
+                                                <img src="images/email.jpg" alt="" />
+                                                <span class="custom-tooltip">Effective email campaigns.<br>Reach your customers directly.</span>
+                                            </span>
                                         </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
@@ -498,7 +557,10 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/web3.jpg" alt="" />
+                                            <span class="img-tooltip-wrapper">
+                                                <img src="images/web3.jpg" alt="" />
+                                                <span class="custom-tooltip">Responsive and modern websites.<br>Enhance your digital presence.</span>
+                                            </span>
                                         </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
@@ -514,7 +576,10 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/web1.jpg" alt="" />
+                                            <span class="img-tooltip-wrapper">
+                                                <img src="images/web1.jpg" alt="" />
+                                                <span class="custom-tooltip">Unique branding solutions.<br>Stand out in your market.</span>
+                                            </span>
                                         </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
@@ -530,7 +595,10 @@
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
                                         <a href="#">
-                                            <img src="images/web2.jpg" alt="" />
+                                            <span class="img-tooltip-wrapper">
+                                                <img src="images/web2.jpg" alt="" />
+                                                <span class="custom-tooltip">Professional graphic services.<br>Enhance your visual identity.</span>
+                                            </span>
                                         </a>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
@@ -821,7 +889,34 @@
         <!-- javascript libraries -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/vendors.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+                <script type="text/javascript" src="js/main.js"></script>
+                <script>
+                // Mobile tooltip support: show tooltip on tap
+                document.addEventListener('DOMContentLoaded', function() {
+                    function isMobile() {
+                        return window.innerWidth <= 767;
+                    }
+                    if (isMobile()) {
+                        document.querySelectorAll('.img-tooltip-wrapper').forEach(function(wrapper) {
+                            wrapper.addEventListener('click', function(e) {
+                                // Hide all other tooltips
+                                document.querySelectorAll('.img-tooltip-wrapper.show-tooltip').forEach(function(w) {
+                                    if (w !== wrapper) w.classList.remove('show-tooltip');
+                                });
+                                // Toggle this tooltip
+                                wrapper.classList.toggle('show-tooltip');
+                                e.stopPropagation();
+                            });
+                        });
+                        // Hide tooltip when clicking outside
+                        document.addEventListener('click', function() {
+                            document.querySelectorAll('.img-tooltip-wrapper.show-tooltip').forEach(function(w) {
+                                w.classList.remove('show-tooltip');
+                            });
+                        });
+                    }
+                });
+                </script>
             <script>
             // Show popup on page load
             window.addEventListener('DOMContentLoaded', function() {

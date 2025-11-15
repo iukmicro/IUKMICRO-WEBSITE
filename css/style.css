@@ -1,3 +1,83 @@
+/* Show tooltips on tap for mobile devices */
+@media (max-width: 767px) {
+  .img-tooltip-wrapper .custom-tooltip {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 100% !important;
+    bottom: auto !important;
+    transform: translateX(-50%) translateY(12px) !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    font-size: 13px !important;
+    z-index: 2147483647 !important;
+  }
+  .img-tooltip-wrapper.show-tooltip .custom-tooltip {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+/* Tooltip flip for top-row images */
+.img-tooltip-wrapper.tooltip-flip .custom-tooltip {
+  top: auto !important;
+  bottom: 100% !important;
+  transform: translateX(-50%) translateY(-16px) !important;
+}
+.img-tooltip-wrapper.tooltip-flip .custom-tooltip::after {
+  top: auto;
+  bottom: -14px;
+  border-top: none;
+  border-bottom: 14px solid #3a3746;
+}
+/* Tooltip styles for portfolio images */
+.img-tooltip-wrapper { position: relative !important; display: inline-block !important; }
+.custom-tooltip {
+  display: none !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 100% !important;
+  transform: translateX(-50%) translateY(0) !important;
+  background: #5a5870 !important; /* lighter background */
+  color: #fff !important;
+  padding: 4px 16px 8px 16px !important;
+  border-radius: 16px !important;
+  white-space: pre-line !important;
+  z-index: 2147483647 !important; /* Highest z-index to ensure tooltip is above all */
+  width: 340px !important;
+  max-width: 90vw !important;
+  text-align: left !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12) !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s !important;
+}
+.custom-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 14px solid #3a3746;
+}
+.img-tooltip-wrapper:hover .custom-tooltip {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+/* Fix: Allow tooltips to overflow portfolio image and box containers */
+.portfolio-image,
+.portfolio-box {
+  overflow: visible !important;
+}
 /* -------------------------------------------------------
     Theme Name: Crafto - The Multipurpose HTML5 Template
     Theme URL: https://craftohtml.themezaa.com/
