@@ -4,9 +4,9 @@
         <title>IUK Micro Com-Ballari</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="ThemeZaa">
+        <meta name="author" content="IUKMICROCOM">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="description" content="">
+        <meta name="description" content="IUK MICRO COM We Help Businesses Increase Revenue">
         <!-- favicon icon -->
         <link rel="shortcut icon" href="images/iuklogo.png">
         <link rel="apple-touch-icon" href="#">
@@ -23,6 +23,37 @@
         <link rel="stylesheet" href="demos/marketing/marketing.css" />
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
+            <!-- Contact Form Popup Modal -->
+            <div id="contact-popup" class="contact-popup" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;">
+                <div class="contact-form-style-03 position-relative border-radius-10px bg-white box-shadow-double-large overflow-hidden last-paragraph-no-margin" style="max-width:520px;width:96vw;max-height:90vh;overflow:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.5rem 2rem;">
+                    <button id="close-contact-popup" style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:2rem;cursor:pointer;z-index:2;">&times;</button>
+                    <h2 class="fw-700 text-dark-gray mb-30px sm-mb-20px fancy-text-style-4 ls-minus-2px text-center w-100">Say  <span data-fancy-text='{ "effect": "rotate", "string": ["hello!", "lets chat!", "hi there!"] }'></span></h2>
+                    <form style="width:100%;display:flex;flex-direction:column;align-items:center;">
+                        <div class="position-relative form-group mb-20px w-100">
+                            <input id="popup-name" autocomplete="off" class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" type="text" name="name" placeholder="Enter your name*" onblur="validatePopupField(this)" />
+                            <span class="popup-icon-wrap" style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);display:flex;gap:0.5rem;align-items:center;pointer-events:none;">
+                                <i class="bi bi-exclamation-circle text-danger popup-error-icon" style="font-size:1.1em;display:none;"></i>
+                                <i class="bi bi-person icon-extra-medium text-dark-gray"></i>
+                            </span>
+                        </div>
+                        <div class="position-relative form-group mb-20px w-100">
+                            <input id="popup-email" autocomplete="off" class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" type="text" name="email" placeholder="Enter your email*" onblur="validatePopupField(this)" />
+                            <span class="popup-icon-wrap" style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);display:flex;gap:0.5rem;align-items:center;pointer-events:none;">
+                                <i class="bi bi-exclamation-circle text-danger popup-error-icon" style="font-size:1.1em;display:none;"></i>
+                                <i class="bi bi-envelope icon-extra-medium text-dark-gray"></i>
+                            </span>
+                        </div>
+                        <div class="position-relative z-index-1 form-group form-textarea mt-15px mb-0 w-100"> 
+                            <textarea class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" name="comment" placeholder="Enter your message" rows="3"></textarea>
+                            <span class="form-icon text-dark-gray" style="position:absolute;right:0.75rem;top:1.5rem;"><i class="bi bi-chat-square-dots icon-extra-medium"></i></span>
+                            <input type="hidden" name="redirect" value="">
+                            <button class="btn btn-large btn-dark-gray btn-round-edge btn-box-shadow mb-20px mt-25px submit w-100" type="button" style="margin-left:0;" onclick="redirectToWhatsApp()">Send message</button>
+                            <div class="form-results mt-20px d-none"></div>
+                        </div>
+                    </form>
+                    <div class="position-absolute bottom-0px right-minus-30px fs-350 lh-100 fw-900 text-yellow" style="pointer-events:none;user-select:none;">&lt;</div>
+                </div>
+            </div>
         <!-- start cursor -->
         <div class="cursor-page-inner">
             <div class="circle-cursor circle-cursor-inner"></div>
@@ -36,9 +67,7 @@
                 <div class="container-fluid">
                     <div class="col-auto col-lg-2 me-lg-0 me-auto">
                         <a class="navbar-brand" href="index.html">
-                            <!-- <img src="images/demo-marketing-logo-black.png" data-at2x="images/demo-marketing-logo-black@2x.png" alt="" class="default-logo">
-                            <img src="images/demo-marketing-logo-black.png" data-at2x="images/demo-marketing-logo-black@2x.png" alt="" class="alt-logo"> -->
-                            <!-- <img src="#" data-at2x="images/demo-marketing-logo-black@2x.png" alt="" class="mobile-logo">  -->
+                            <img src="images/iuk60.png" alt="IUK Micro Com Logo" class="default-logo">
                         </a>
                     </div>
                     <div class="col-auto menu-order position-static">
@@ -56,7 +85,7 @@
                                     <a href="#service" class="nav-link">Services</a>
                                 </li>
                                
-                                <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+                                
                                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                             </ul>
                         </div>
@@ -64,9 +93,10 @@
                     <div class="col-auto col-lg-2 text-end">
                         <div class="header-icon"> 
                             <div class="header-social-icon icon">
-                                <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="https://facebook.com/iukmicrocom" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/iukmicrocom" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="mailto:iukmicrocom@rediffmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="https://iukmicrocom.in" target="_blank"><i class="fa-solid fa-globe"></i></a>
                             </div>
                         </div>  
                     </div>
@@ -132,7 +162,6 @@
         </section>
         <!-- end banner -->
         <!-- start section --> 
-       
         <!-- end section -->
         <!-- start section -->
         <section class="half-section overlap-height position-relative overflow-hidden" id="about"> 
@@ -192,6 +221,115 @@
             </div>
         </section>
         <!-- end section -->
+                <!-- start services summary section from PDF -->
+                <section class="half-section overlap-height position-relative overflow-hidden" style="background-color:#fff;">
+                    <div class="container overlap-gap-section">
+                        <div class="row align-items-center justify-content-md-center">
+                            <div class="col-lg-12" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                                <span class="fs-15 text-uppercase text-base-color fw-600 ls-1px mb-15px d-block">Our Services</span>
+                                <h3 class="fw-700 text-dark-gray ls-minus-1px fancy-text-style-4 mb-4">What We Offer</h3>
+                                <div class="accordion accordion-style-02" id="accordion-services" data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
+                                    <div class="accordion-item active-accordion">
+                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-01" aria-expanded="true" data-bs-parent="#accordion-services">
+                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                    <i class="bi bi-window icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Website Development</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div id="accordion-services-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-services">
+                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                                <ul class="ps-3 mb-0">
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Custom website design and development tailored to your brand.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Responsive and mobile-friendly interfaces.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Integration of CMS platforms (WordPress, Shopify, etc.).</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">SEO optimization and performance enhancements.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-02" aria-expanded="false" data-bs-parent="#accordion-services">
+                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                    <i class="bi bi-telephone icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Telecalling</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div id="accordion-services-02" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
+                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                                <ul class="ps-3 mb-0">
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Professional outbound and inbound calling services.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Lead generation and client follow-ups.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Customer feedback collection and support.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">CRM integration for call tracking and reporting.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-03" aria-expanded="false" data-bs-parent="#accordion-services">
+                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                    <i class="bi bi-share icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Social Media Marketing</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div id="accordion-services-03" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
+                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                                <ul class="ps-3 mb-0">
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Social media strategy and campaign planning.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Content creation and community management.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Paid ads management (Meta, LinkedIn, etc.).</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Monthly analytics and performance reporting.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-04" aria-expanded="false" data-bs-parent="#accordion-services">
+                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                    <i class="bi bi-pencil-square icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Content Creation</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div id="accordion-services-04" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
+                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                                <ul class="ps-3 mb-0">
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Development of brand-specific content for all digital platforms.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Copywriting for websites, blogs, and ads.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Graphic design and short-form video creation.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Consistent messaging aligned with brand identity.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header border-bottom border-color-transparent">
+                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-05" aria-expanded="false" data-bs-parent="#accordion-services">
+                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                    <i class="bi bi-bullseye icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Advertisement</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div id="accordion-services-05" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
+                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
+                                                <ul class="ps-3 mb-0">
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Online advertising strategy and execution.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Google Ads, Meta Ads, and local ad network setup.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Creative ad design and copywriting.</li>
+                                                    <li style="list-style-type: disc; margin-left: 1em;">Performance tracking and ROI reporting.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end services summary section -->
         <!-- start section -->
         <section class="bg-very-light-gray md-pb-40px xs-pb-25px" id="service">
             <div class="container-fluid overlap-section">
@@ -410,7 +548,7 @@
         </section>
         <!-- end section -->
         <!-- start section -->
-        <section> 
+        <section style="padding-bottom: 0px;"> 
             <div class="container">
                 <div class="row align-items-center mb-6 xs-mb-12 justify-content-md-center"> 
                     <div class="col-xl-5 col-lg-6 col-md-12 md-mb-50px" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'> 
@@ -479,8 +617,7 @@
                                 <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
                             </span>
                         </a>
-                        
-                    </div> 
+                    </div>
                     <div class="col-lg-6 offset-xl-1 col-md-10 position-relative"> 
                         <figure class="position-relative m-0 text-center" data-anime='{ "effect": "slide", "color": "#fff2ef", "direction":"rl", "easing": "easeOutQuad", "delay":50}'>
                             <img src="images/hero3.jpg" alt="">
@@ -490,237 +627,60 @@
                         </figure>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 justify-content-center counter-style-04">
-                    <div class="col last-paragraph-no-margin text-center sm-mb-40px">
-                        <h3 class="vertical-counter d-inline-flex alt-font text-dark-gray fw-700 ls-minus-3px m-0" data-text="%" data-to="98"><sup class="text-jungle-green top-0"><i class="bi bi-arrow-up icon-extra-medium"></i></sup></h3>
-                        <p>Revenue increasing</p>
-                    </div>
-                    <div class="col last-paragraph-no-margin text-center sm-mb-40px">
-                        <h3 class="vertical-counter d-inline-flex alt-font text-dark-gray fw-700 ls-minus-3px m-0" data-text="%" data-to="100"><sup class="text-jungle-green top-0"><i class="bi bi-arrow-up icon-extra-medium"></i></sup></h3>
-                        <p>Company growth</p>
-                    </div> 
-                    <div class="col last-paragraph-no-margin text-center xs-mb-40px">
-                        <h3 class="vertical-counter d-inline-flex alt-font text-dark-gray fw-700 ls-minus-3px m-0" data-text="%" data-to="90"><sup class="text-jungle-green top-0"><i class="bi bi-arrow-up icon-extra-medium"></i></sup></h3>
-                        <p>Client Engagement</p>
-                    </div> 
-                    <div class="col last-paragraph-no-margin text-center">
-                        <h3 class="vertical-counter d-inline-flex alt-font text-dark-gray fw-700 ls-minus-3px m-0" data-text="%" data-to="94"><sup class="text-jungle-green top-0"><i class="bi bi-arrow-up icon-extra-medium"></i></sup></h3>
-                        <p>Website Traffic</p>
-                    </div> 
-                </div>
-            </div>
+                     </div>
         </section>
         <!-- end section -->
-
-                <!-- start section --> 
-        <section class="overlap-height" id="team">
-            <div class="container overlap-gap-section">
-                <div class="row align-items-end mb-7 sm-mb-60px">
-                    <div class="col-lg-6 md-mb-30px" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <h3 class="fw-700 text-dark-gray ls-minus-1px mb-0 w-85 lg-w-100">Our success comes from visionary</h3>
-                    </div>
-                    <div class="col-lg-5 offset-xl-0 offset-lg-1 progress-bar-style-01 mt-40px" data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <!-- start progress bar item -->
-                        <div class="progress mb-14 md-mb-60px bg-extra-medium-gray">
-                            <div class="progress-bar-title d-inline-block text-dark-gray fs-18 ls-minus-05px fw-600">Value for results</div>
-                            <div class="progress-bar bg-base-color" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="value">
-                                <span class="progress-bar-percent text-center bg-dark-gray alt-font fs-11 lh-12 text-white">90%</span>
-                            </div>
-                        </div>
-                        <!-- end progress bar item -->
-                        <!-- start progress bar item -->
-                        <div class="progress bg-extra-medium-gray">
-                            <div class="progress-bar-title d-inline-block text-dark-gray fs-18 ls-minus-05px fw-600">Global experience</div>
-                            <div class="progress-bar bg-base-color" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="global">
-                                <span class="progress-bar-percent text-center bg-dark-gray alt-font fs-11 lh-12 text-white">95%</span>
-                            </div>
-                        </div>
-                        <!-- end progress bar item -->
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-sm-2" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                    <!-- start team member item --> 
-                    <div class="col text-center team-style-01 mb-3 md-mb-30px">
-                        <figure class="mb-0 hover-box box-hover position-relative">
-                            <img src="https://via.placeholder.com/600x756" alt="" class="border-radius-6px" />
-                            <figcaption class="w-100 p-30px bg-white">
-                                <div class="position-relative z-index-1 overflow-hidden">
-                                    <span class="d-block fw-600 fs-18 text-dark-gray lh-26 ls-minus-05px">Uma I</span>
-                                    <p class="m-0">Chairman/Director</p>
-                                    <div class="social-icon hover-text mt-20px social-icon-style-05">
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Fb.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">In.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Tw.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Dr.</a>
-                                    </div>
-                                </div>
-                                <div class="box-overlay bg-white box-shadow-quadruple-large border-radius-6px"></div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <!-- end team member item -->     
-                    <!-- start team member item --> 
-                    <div class="col text-center team-style-01 mb-3 md-mb-30px">
-                        <figure class="mb-0 hover-box box-hover position-relative">
-                            <img src="https://via.placeholder.com/600x756" alt="" class="border-radius-6px" />
-                            <figcaption class="w-100 p-30px bg-white">
-                                <div class="position-relative z-index-1 overflow-hidden">
-                                    <span class="d-block fw-600 fs-18 text-dark-gray lh-26 ls-minus-05px">Manikanta</span>
-                                    <p class="m-0">Managing Director/Graphic Designer</p>
-                                    <div class="social-icon hover-text mt-20px">
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Fb.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">In.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Tw.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Dr.</a>
-                                    </div>
-                                </div>
-                                <div class="box-overlay bg-white box-shadow-quadruple-large border-radius-6px"></div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <!-- end team member item -->     
-                    <!-- start team member item --> 
-                    <div class="col text-center team-style-01 mb-3 md-mb-30px">
-                        <figure class="mb-0 hover-box box-hover position-relative">
-                            <img src="https://via.placeholder.com/600x756" alt="" class="border-radius-6px" />
-                            <figcaption class="w-100 p-30px bg-white">
-                                <div class="position-relative z-index-1 overflow-hidden">
-                                    <span class="d-block fw-600 fs-18 text-dark-gray lh-26 ls-minus-05px">Yagya</span>
-                                    <p class="m-0">Chief executive officer/Digital marketer</p>
-                                    <div class="social-icon hover-text mt-20px">
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Fb.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">In.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Tw.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Dr.</a>
-                                    </div>
-                                </div>
-                                <div class="box-overlay bg-white box-shadow-quadruple-large border-radius-6px"></div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <!-- end team member item -->     
-                    <!-- start team member item --> 
-                    <div class="col text-center team-style-01 mb-3 md-mb-30px">
-                        <figure class="mb-0 hover-box box-hover position-relative">
-                            <img src="https://via.placeholder.com/600x756" alt="" class="border-radius-6px" />
-                            <figcaption class="w-100 p-30px bg-white">
-                                <div class="position-relative z-index-1 overflow-hidden">
-                                    <span class="d-block fw-600 fs-18 text-dark-gray lh-26 ls-minus-05px">Kushal</span>
-                                    <p class="m-0">Chief Financial/Director</p>
-                                    <div class="social-icon hover-text mt-20px">
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Fb.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">In.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Tw.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Dr.</a>
-                                    </div>
-                                </div>
-                                <div class="box-overlay bg-white box-shadow-quadruple-large border-radius-6px"></div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <!-- end team member item -->
-                    <!-- start team member item --> 
-                    <div class="col text-center team-style-01 lg-mb-3 md-mb-30px">
-                        <figure class="mb-0 hover-box box-hover position-relative">
-                            <img src="https://via.placeholder.com/600x756" alt="" class="border-radius-6px" />
-                            <figcaption class="w-100 p-30px bg-white">
-                                <div class="position-relative z-index-1 overflow-hidden">
-                                    <span class="d-block fw-600 fs-18 text-dark-gray lh-26 ls-minus-05px">Sampada</span>
-                                    <p class="m-0">General Manager/Editor</p>
-                                    <div class="social-icon hover-text mt-20px">
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Fb.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">In.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Tw.</a>
-                                        <a href="#" target="_blank" class="fw-600 text-dark-gray">Dr.</a>
-                                    </div>
-                                </div>
-                                <div class="box-overlay bg-white box-shadow-quadruple-large border-radius-6px"></div>
-                            </figcaption>
-                        </figure>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-                <!-- start section -->
+        <!-- start section -->
         <section class="overflow-hidden" id="contact">
-            <div class="container">
-                <div class="row justify-content-center align-items-center mb-9 sm-mb-45px"> 
-                    <div class="col-xxl-5 col-lg-6 md-mb-50px" data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'> 
-                        <span class="fs-15 text-uppercase text-base-color fw-600 mb-15px d-block ls-1px">Get in touch with us</span> 
-                        <h3 class="fw-700 text-dark-gray ls-minus-1px mb-50px sm-mb-35px">We’re here to help. Let’s connect.</h3>
-                        <!-- start features box item -->
-                        <div class="icon-with-text-style-01 mb-10 md-mb-35px">
-                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                <div class="feature-box-icon me-25px">
-                                    <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
-                                </div>
-                                <div class="feature-box-content last-paragraph-no-margin">
-                                    <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Visit our office:</span>
-                                    <p class="w-60 md-w-100">Parvathi Nagar 3rd Cross,Ballari Karnataka 583101.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="icon-with-text-style-01 mb-10 md-mb-35px">
-                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                <div class="feature-box-icon me-25px">
-                                    <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Call us directly:</span>
-                                    <div class="w-100 d-block">
-                                        <span class="d-block">Phone: <a href="tel:1800222000">+91 78995 19403</a></span>
-                                       
+            <div class="container" style="padding-top: 0;">
+                <div class="row justify-content-center align-items-center mb-2 sm-mb-10px"> 
+                    <div class="col-12" data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <span class="fs-15 text-uppercase text-base-color fw-600 mb-15px d-block ls-1px text-center">Get in touch with us</span>
+                        <h3 class="fw-700 text-dark-gray ls-minus-1px mb-50px sm-mb-35px text-center">We’re here to help. Let’s connect.</h3>
+                        <div class="d-flex flex-row justify-content-center align-items-stretch gap-5 flex-wrap">
+                            <!-- Visit -->
+                            <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto" style="min-width:220px;">
+                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                    <div class="feature-box-icon me-25px">
+                                        <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
+                                    </div>
+                                    <div class="feature-box-content last-paragraph-no-margin">
+                                        <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Visit our office:</span>
+                                        <p class="w-100">Parvathi Nagar 2nd Cross,Ballari Karnataka-583101.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="icon-with-text-style-01">
-                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                <div class="feature-box-icon me-25px">
-                                    <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Email us anytime:</span>
-                                    <div class="w-100 d-block">
-                                        <a href="mailto:info@yourdomain.com">info@iukmicro.com</a><br/>
+                            <!-- Call -->
+                            <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto" style="min-width:220px;">
+                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                    <div class="feature-box-icon me-25px">
+                                        <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
+                                    </div>
+                                    <div class="feature-box-content">
+                                        <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Call us directly:</span>
+                                        <div class="w-100 d-block">
+                                            <span class="d-block">Phone: <a href="tel:9448497505">+91 94484 97505</a></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- end features box item -->
-                    </div> 
-                    <div class="col-lg-6 offset-xxl-1" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'> 
-                        <div class="contact-form-style-03 position-relative border-radius-10px bg-white p-14 lg-p-10 box-shadow-double-large overflow-hidden last-paragraph-no-margin">
-                            <h2 class="fw-700 text-dark-gray mb-30px sm-mb-20px fancy-text-style-4 ls-minus-2px">Say  
-                                <span data-fancy-text='{ "effect": "rotate", "string": ["hello!", "hallå!", "salve!"] }'></span> 
-                            </h2> 
-                            <form action="email-templates/contact-form.php" method="post">
-                                <div class="position-relative form-group mb-20px">
-                                    <span class="form-icon text-dark-gray"><i class="bi bi-person icon-extra-medium"></i></span>
-                                    <input class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control required" type="text" name="name" placeholder="Enter your name*" />
+                            <!-- Email -->
+                            <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto" style="min-width:220px;">
+                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                    <div class="feature-box-icon me-25px">
+                                        <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
+                                    </div>
+                                    <div class="feature-box-content">
+                                        <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Email us anytime:</span>
+                                        <div class="w-100 d-block">
+                                            <a href="mailto:iukmicrocom@rediffmail.com" style="font-size:1rem;">iukmicrocom@rediffmail.com</a><br/>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="position-relative form-group mb-20px">
-                                    <span class="form-icon text-dark-gray"><i class="bi bi-envelope icon-extra-medium"></i></span>
-                                    <input class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control required" type="email" name="email" placeholder="Enter your email*" />
-                                </div>
-                                <div class="position-relative z-index-1 form-group form-textarea mt-15px mb-0"> 
-                                    <textarea class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" name="comment" placeholder="Enter your message" rows="3"></textarea>
-                                    <span class="form-icon text-dark-gray"><i class="bi bi-chat-square-dots icon-extra-medium"></i></span>
-                                    <input type="hidden" name="redirect" value="">
-                                    <button class="btn btn-large btn-dark-gray btn-round-edge btn-box-shadow mb-20px mt-25px submit w-100" type="submit">Send message</button>
-                                    
-                                    <div class="form-results mt-20px d-none"></div>
-                                </div>
-                            </form> 
-                            <div class="position-absolute bottom-0px right-minus-30px fs-350 lh-100 fw-900 text-yellow">&lt;</div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Contact form moved to popup -->
                 </div> 
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-auto text-center text-md-end sm-mb-20px" data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
@@ -731,23 +691,22 @@
                     </div>
                     <div class="col-md-auto elements-social social-icon-style-04 text-center text-md-start ps-lg-0" data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                         <ul class="large-icon dark">
-                            <li class="m-0"><a class="facebook" href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i><span></span></a></li>
-                            <li class="m-0"><a class="dribbble" href="#" target="_blank"><i class="fa-brands fa-dribbble"></i><span></span></a></li>
-                            <li class="m-0"><a class="twitter" href="#" target="_blank"><i class="fa-brands fa-twitter"></i><span></span></a></li>      
-                            <li class="m-0"><a class="instagram" href="#" target="_blank"><i class="fa-brands fa-instagram"></i><span></span></a></li>
-                            <li class="m-0"><a class="linkedin" href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i><span></span></a></li>
+                            <li class="m-0"><a class="facebook" href="https://facebook.com/iukmicrocom" target="_blank"><i class="fa-brands fa-facebook-f"></i><span></span></a></li>
+                            <li class="m-0"><a class="instagram" href="https://instagram.com/iukmicrocom" target="_blank"><i class="fa-brands fa-instagram"></i><span></span></a></li>
+                            <li class="m-0"><a class="envelope" href="mailto:iukmicrocom@rediffmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span></span></a></li>
+                            <li class="m-0"><a class="globe" href="https://iukmicrocom.in" target="_blank"><i class="fa-solid fa-globe"></i><span></span></a></li>
                         </ul>                  
                     </div>
                 </div>
             </div>
         </section>
         <!-- end section -->
-        <!-- start section -->
+        <!-- start map section -->
         <section class="bg-very-light-gray p-0">
             <div class="container-fluid"> 
                 <div class="row">
-                    <div class="col-12 p-0">
-                        <div id="map" class="map h-650px sm-h-450px" data-map-options='{ "lat": -37.805688, "lng": 144.962312, "style": "Silver", "marker": { "type": "image", "class": "marker01", "src": "images/marker03.png" }, "popup": { "defaultOpen": false, "html": "<div class=infowindow><strong class=\"mb-3 d-inline-block alt-font\">Crafto Marketing</strong><p class=\"alt-font\">16122 Collins street, Melbourne, Australia</p></div><div class=\"google-maps-link alt-font\"> <a aria-label=\"View larger map\" target=\"_blank\" jstcache=\"31\" href=\"https://maps.google.com/maps?ll=-37.805688,144.962312&amp;z=17&amp;t=m&amp;hl=en-US&amp;gl=IN&amp;mapclient=embed&amp;cid=13153204942596594449\" jsaction=\"mouseup:placeCard.largerMap\">VIEW LARGER MAP</a></div>" } }'></div>
+                    <div class="col-12 p-0 text-center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.095585798623!2d76.92254667488417!3d15.153094385401392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb711fa650b484b%3A0xfbd4d48517c8783e!2sIUK%20Micro%20Com!5e0!3m2!1sen!2sin!4v1763174443281!5m2!1sen!2sin" width="600" height="450" style="border:0; width:100%; max-width:900px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div> 
                 </div> 
             </div>
@@ -767,7 +726,7 @@
                             </div>
                             <div class="feature-box-content last-paragraph-no-margin">
                                 
-                                <h6 class="d-inline-block fw-600 mb-0"><a href="mailto:info@iukmicro.com" class="text-dark-gray text-decoration-line-bottom-medium text-white-hover">info@iukmicro.com</a></h6> 
+                                <h5 class="d-inline-block fw-600 mb-0" style="font-size: xx-large;"><a href="mailto:iukmicrocom@rediffmail.com" class="text-dark-gray text-decoration-line-bottom-medium text-white-hover">iukmicrocom@rediffmail.com</a></h5> 
                             </div>
                         </div>
                     </div>
@@ -777,15 +736,15 @@
                 <div class="row mb-5 sm-mb-30px">
                     <!-- start footer column -->
                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column last-paragraph-no-margin md-mb-35px">
-                        <!-- <a href="index.html" class="footer-logo mb-25px xs-mb-20px d-inline-block">
-                            <img src="images/demo-marketing-logo-white.png" data-at2x="images/demo-marketing-logo-white@2x.png" alt="">
-                        </a> -->
+                        <a href="index.html" class="footer-logo mb-25px xs-mb-20px d-inline-block">
+                            <img src="images/iukmicrologo.png" alt="IUK Micro Com Logo">
+                        </a>
                         <div class="elements-social social-text-style-01 mt-auto">
                             <ul class="small-icon light fw-500">
-                                <li><a class="facebook" href="#" target="_blank">Fb.</a></li>
-                                <li><a class="instagram" href="#" target="_blank">Ig.</a></li> 
-                                <li><a class="twitter" href="#" target="_blank">Tw.</a></li> 
-                                <li><a class="behance" href="#" target="_blank">Be.</a></li> 
+                                <li><a class="facebook" href="https://facebook.com/iukmicrocom" target="_blank">Fb.</a></li>
+                                <li><a class="instagram" href="https://instagram.com/iukmicrocom" target="_blank">Ig.</a></li>
+                                <li><a class="envelope" href="mailto:iukmicrocom@rediffmail.com" target="_blank">Mail.</a></li>
+                                <li><a class="globe" href="https://iukmicrocom.in" target="_blank">Web.</a></li>
                             </ul>
                         </div>
                     </div>
@@ -794,13 +753,12 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin md-mb-35px"> 
                         <span class="fs-16 fw-500 d-block text-white mb-5px">About Us:</span>
                         <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">To empower businesses with impactful digital and telecalling marketing strategies.</p> 
-                        <div class="d-inline-block"><i class="bi bi-telephone-outbound me-10px text-white align-middle"></i><a href="tel:7899519403">+91 78995 19403</a><div class="bg-white-transparent-very-light fw-500 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">Free</div></div> 
-                    </div>
+                                  </div>
                     <!-- end footer column -->
                     <div class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin md-mb-35px"> 
                         <span class="fs-16 fw-500 d-block text-white mb-5px">Visit at:</span>
-                        <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">Parvathi Nagar, 3rd Cross, Ballari Karnataka 583101.</p> 
-                        <div class="d-inline-block"><i class="bi bi-telephone-outbound me-10px text-white align-middle"></i><a href="tel:7899519403">+91 78995 19403</a><div class="bg-white-transparent-very-light fw-500 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">Free</div></div> 
+                        <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">Parvathi Nagar, 2nd Cross, Ballari Karnataka-583101.</p> 
+                        <div class="d-inline-block"><i class="bi bi-telephone-outbound me-10px text-white align-middle"></i><a href="tel:9448497505">+91 94484 97505</a><div class="bg-white-transparent-very-light fw-500 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">Free</div></div> 
                     </div>
                    
 
@@ -812,14 +770,14 @@
                             <li class="nav-item active"><a href="index.html" class="nav-link ps-0">Home</a></li>
                             <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                             <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
-                            <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+                            
                             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                         </ul>
                     </div> 
                     <!-- end footer menu -->
                     <!-- start copyright -->
                     <div class="col-lg-4 last-paragraph-no-margin text-center text-lg-end">
-                        <p class="fs-15">&copy; 2024  <a href="#" target="_blank" class="text-white text-decoration-line-bottom">IUKMICRO.</a>All rights reserved.</p>
+                        <p class="fs-15">&copy; 2024  <a href="#" target="_blank" class="text-white text-decoration-line-bottom">IUKMICROCOM.</a>All rights reserved.</p>
                     </div>
                     <!-- start copyright -->
                 </div>
@@ -864,5 +822,48 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/vendors.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+            <script>
+            // Show popup on page load
+            window.addEventListener('DOMContentLoaded', function() {
+                var popup = document.getElementById('contact-popup');
+                if (popup) {
+                    popup.style.display = 'flex';
+                    popup.style.justifyContent = 'center';
+                    popup.style.alignItems = 'center';
+                }
+                var closeBtn = document.getElementById('close-contact-popup');
+                if (closeBtn) {
+                    closeBtn.onclick = function() {
+                        popup.style.display = 'none';
+                    };
+                }
+            });
+
+            // Show error icon only if field is invalid and blurred
+            function validatePopupField(input) {
+                var iconWrap = input.parentElement.querySelector('.popup-icon-wrap');
+                if (!iconWrap) return;
+                var errorIcon = iconWrap.querySelector('.popup-error-icon');
+                // Remove browser's default validation icon by using type="text" for email
+                if (!input.value.trim() || (input.name === 'email' && !/^\S+@\S+\.\S+$/.test(input.value.trim()))) {
+                    if (errorIcon) errorIcon.style.display = 'inline-block';
+                } else {
+                    if (errorIcon) errorIcon.style.display = 'none';
+                }
+            }
+
+            function redirectToWhatsApp() {
+                var name = document.getElementById('popup-name').value.trim();
+                var email = document.getElementById('popup-email').value.trim();
+                var message = document.querySelector('textarea[name="comment"]').value.trim();
+                if (!name || !email) {
+                    alert('Please fill in your name and email.');
+                    return;
+                }
+                var text = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
+                var url = 'https://wa.me/919448497505?text=' + encodeURIComponent(text);
+                window.open(url, '_blank');
+            }
+            </script>
     </body>
 </html>
