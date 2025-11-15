@@ -21,47 +21,6 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/responsive.css"/>
         <link rel="stylesheet" href="demos/marketing/marketing.css" />
-        <style>
-        .img-tooltip-wrapper { position: relative; display: inline-block; }
-        .custom-tooltip {
-            display: none;
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            transform: translateX(-50%) translateY(16px);
-            background: #3a3746;
-            color: #fff;
-            padding: 18px 28px 18px 24px;
-            border-radius: 22px;
-            white-space: pre-line;
-            z-index: 9999;
-            width: 270px;
-            text-align: left;
-            font-size: 16px;
-            font-family: inherit;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        .custom-tooltip::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 14px solid transparent;
-            border-right: 14px solid transparent;
-            border-top: 14px solid #3a3746;
-        }
-        .img-tooltip-wrapper:hover .custom-tooltip {
-            display: block;
-            opacity: 1;
-            pointer-events: auto;
-        }
-        </style>
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
             <!-- Contact Form Popup Modal -->
@@ -442,12 +401,10 @@
                             <li class="grid-item selected transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper tooltip-flip">
-                                                <img src="images/outbound.jpg" alt="" />
-                                                <span class="custom-tooltip">Professional outbound calling services.<br>Increase your business reach.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/outbound.jpg" alt="" />
+                                            <span class="custom-tooltip">Professional outbound calling services.<br>Increase your business reach.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Outbound Telecalling</a>
@@ -461,12 +418,10 @@
                             <li class="grid-item selected web transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper tooltip-flip">
-                                                <img src="images/inbound.jpg" alt="" />
-                                                <span class="custom-tooltip">Expert inbound call handling.<br>Enhance customer satisfaction.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/inbound.jpg" alt="" />
+                                            <span class="custom-tooltip">Expert inbound call handling.<br>Enhance customer satisfaction.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Inbound Telecalling</a>
@@ -480,12 +435,10 @@
                             <li class="grid-item web selected transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper tooltip-flip">
-                                                <img src="images/market.jpg" alt="" />
-                                                <span class="custom-tooltip">Data-driven insights for growth.<br>Improve customer retention.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/market.jpg" alt="" />
+                                            <span class="custom-tooltip">Data-driven insights for growth.<br>Improve customer retention.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Market Research & Customer Retention</a>
@@ -499,12 +452,10 @@
                             <li class="grid-item web digital transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper">
-                                                <img src="images/social.jpg" alt="" />
-                                                <span class="custom-tooltip">Engage your audience online.<br>Boost your brand presence.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/social.jpg" alt="" />
+                                            <span class="custom-tooltip">Engage your audience online.<br>Boost your brand presence.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Social Media Marketing</a>
@@ -518,12 +469,10 @@
                             <li class="grid-item digital web transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper">
-                                                <img src="images/digital1.jpg" alt="" />
-                                                <span class="custom-tooltip">Comprehensive digital strategies.<br>Increase your online visibility.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/digital1.jpg" alt="" />
+                                            <span class="custom-tooltip">Comprehensive digital strategies.<br>Increase your online visibility.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Digital Marketing</a>
@@ -537,12 +486,10 @@
                             <li class="grid-item web digital transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper">
-                                                <img src="images/email.jpg" alt="" />
-                                                <span class="custom-tooltip">Effective email campaigns.<br>Reach your customers directly.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/email.jpg" alt="" />
+                                            <span class="custom-tooltip">Effective email campaigns.<br>Reach your customers directly.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Email Marketing</a>
@@ -556,12 +503,10 @@
                             <li class="grid-item web branding transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper">
-                                                <img src="images/web3.jpg" alt="" />
-                                                <span class="custom-tooltip">Responsive and modern websites.<br>Enhance your digital presence.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/web3.jpg" alt="" />
+                                            <span class="custom-tooltip">Responsive and modern websites.<br>Enhance your digital presence.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Website Development</a>
@@ -575,12 +520,10 @@
                             <li class="grid-item web branding transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper">
-                                                <img src="images/web1.jpg" alt="" />
-                                                <span class="custom-tooltip">Unique branding solutions.<br>Stand out in your market.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/web1.jpg" alt="" />
+                                            <span class="custom-tooltip">Unique branding solutions.<br>Stand out in your market.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Brand Identity</a>
@@ -594,12 +537,10 @@
                             <li class="grid-item web branding transition-inner-all">
                                 <div class="portfolio-box">
                                     <div class="portfolio-image border-radius-6px">
-                                        <a href="#">
-                                            <span class="img-tooltip-wrapper">
-                                                <img src="images/web2.jpg" alt="" />
-                                                <span class="custom-tooltip">Professional graphic services.<br>Enhance your visual identity.</span>
-                                            </span>
-                                        </a>
+                                        <span class="img-tooltip-wrapper">
+                                            <img src="images/web2.jpg" alt="" />
+                                            <span class="custom-tooltip">Professional graphic services.<br>Enhance your visual identity.</span>
+                                        </span>
                                     </div>
                                     <div class="portfolio-caption pt-30px pb-30px">
                                         <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Graphic Design</a>
