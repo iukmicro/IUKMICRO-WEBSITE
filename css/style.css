@@ -7112,9 +7112,6 @@ header .navbar-brand .alt-logo, header .navbar-brand .mobile-logo {
   opacity: 0;
   width: 0;
 }
-header .navbar-brand img {
-  max-height: 46px;
-}
 header .header-top-bar {
   position: fixed;
   top: 0;
@@ -19326,7 +19323,7 @@ footer.big-footer {
   padding-bottom: 140px;
 }
 footer .footer-logo img {
-  max-height: 30px;
+  max-height: 100px;
 }
 footer ul {
   padding: 0;
