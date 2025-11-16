@@ -1,905 +1,1047 @@
 ﻿<!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <title>IUK MICRO COM-Ballari</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="IUKMICROCOM">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="description" content="IUK MICRO COM We Help Businesses Increase Revenue">
-        <!-- favicon icon -->
-        <link rel="shortcut icon" href="images/iuklogo.png">
-        <link rel="apple-touch-icon" href="#">
-        <link rel="apple-touch-icon" sizes="72x72" href="#">
-        <link rel="apple-touch-icon" sizes="114x114" href="#">
-        <!-- google fonts preconnect -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- style sheets and font icons  -->
-        <link rel="stylesheet" href="css/vendors.min.css"/>
-        <link rel="stylesheet" href="css/icon.min.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="css/responsive.css"/>
-        <link rel="stylesheet" href="demos/marketing/marketing.css" />
-    </head>
-    <body data-mobile-nav-style="classic" class="custom-cursor">
-            <!-- Contact Form Popup Modal -->
-            <div id="contact-popup" class="contact-popup" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;">
-                <div class="contact-form-style-03 position-relative border-radius-10px bg-white box-shadow-double-large overflow-hidden last-paragraph-no-margin" style="max-width:520px;width:96vw;max-height:90vh;overflow:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.5rem 2rem;">
-                    <button id="close-contact-popup" style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:2rem;cursor:pointer;z-index:2;">&times;</button>
-                    <h2 class="fw-700 text-dark-gray mb-30px sm-mb-20px fancy-text-style-4 ls-minus-2px text-center w-100">Say  <span data-fancy-text='{ "effect": "rotate", "string": ["hello!", "lets chat!", "hi there!"] }'></span></h2>
-                    <form style="width:100%;display:flex;flex-direction:column;align-items:center;">
-                        <div class="position-relative form-group mb-20px w-100">
-                            <input id="popup-name" autocomplete="off" class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" type="text" name="name" placeholder="Enter your name*" onblur="validatePopupField(this)" />
-                            <span class="popup-icon-wrap" style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);display:flex;gap:0.5rem;align-items:center;pointer-events:none;">
-                                <i class="bi bi-exclamation-circle text-danger popup-error-icon" style="font-size:1.1em;display:none;"></i>
-                                <i class="bi bi-person icon-extra-medium text-dark-gray"></i>
-                            </span>
-                        </div>
-                        <div class="position-relative form-group mb-20px w-100">
-                            <input id="popup-email" autocomplete="off" class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" type="text" name="email" placeholder="Enter your email*" onblur="validatePopupField(this)" />
-                            <span class="popup-icon-wrap" style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);display:flex;gap:0.5rem;align-items:center;pointer-events:none;">
-                                <i class="bi bi-exclamation-circle text-danger popup-error-icon" style="font-size:1.1em;display:none;"></i>
-                                <i class="bi bi-envelope icon-extra-medium text-dark-gray"></i>
-                            </span>
-                        </div>
-                        <div class="position-relative z-index-1 form-group form-textarea mt-15px mb-0 w-100"> 
-                            <textarea class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control" name="comment" placeholder="Enter your message" rows="3"></textarea>
-                            <span class="form-icon text-dark-gray" style="position:absolute;right:0.75rem;top:1.5rem;"><i class="bi bi-chat-square-dots icon-extra-medium"></i></span>
-                            <input type="hidden" name="redirect" value="">
-                            <button class="btn btn-large btn-dark-gray btn-round-edge btn-box-shadow mb-20px mt-25px submit w-100" type="button" style="margin-left:0;" onclick="redirectToWhatsApp()">Send message</button>
-                            <div class="form-results mt-20px d-none"></div>
-                        </div>
-                    </form>
-                    <div class="position-absolute bottom-0px right-minus-30px fs-350 lh-100 fw-900 text-yellow" style="pointer-events:none;user-select:none;">&lt;</div>
+
+<head>
+    <title>IUK MICRO COM-Ballari</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="IUKMICROCOM">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="IUK MICRO COM We Help Businesses Increase Revenue">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/iuklogo.png">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="apple-touch-icon" sizes="72x72" href="#">
+    <link rel="apple-touch-icon" sizes="114x114" href="#">
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="css/icon.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="demos/marketing/marketing.css" />
+</head>
+
+<body data-mobile-nav-style="classic" class="custom-cursor">
+    <!-- Contact Form Popup Modal -->
+    <div id="contact-popup" class="contact-popup"
+        style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;">
+        <div class="contact-form-style-03 position-relative border-radius-10px bg-white box-shadow-double-large overflow-hidden last-paragraph-no-margin"
+            style="max-width:520px;width:96vw;max-height:90vh;overflow:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem 2.5rem 2rem;">
+            <button id="close-contact-popup"
+                style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:2rem;cursor:pointer;z-index:2;">&times;</button>
+            <h2 class="fw-700 text-dark-gray mb-30px sm-mb-20px fancy-text-style-4 ls-minus-2px text-center w-100">Say
+                <span data-fancy-text='{ "effect": "rotate", "string": ["hello!", "lets chat!", "hi there!"] }'></span>
+            </h2>
+            <form style="width:100%;display:flex;flex-direction:column;align-items:center;">
+                <div class="position-relative form-group mb-20px w-100">
+                    <input id="popup-name" autocomplete="off"
+                        class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control"
+                        type="text" name="name" placeholder="Enter your name*" onblur="validatePopupField(this)" />
+                    <span class="popup-icon-wrap"
+                        style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);display:flex;gap:0.5rem;align-items:center;pointer-events:none;">
+                        <i class="bi bi-exclamation-circle text-danger popup-error-icon"
+                            style="font-size:1.1em;display:none;"></i>
+                        <i class="bi bi-person icon-extra-medium text-dark-gray"></i>
+                    </span>
                 </div>
-            </div>
-        <!-- start cursor -->
-        <div class="cursor-page-inner">
-            <div class="circle-cursor circle-cursor-inner"></div>
-            <div class="circle-cursor circle-cursor-outer"></div>
+                <div class="position-relative form-group mb-20px w-100">
+                    <input id="popup-email" autocomplete="off"
+                        class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control"
+                        type="text" name="email" placeholder="Enter your email*" onblur="validatePopupField(this)" />
+                    <span class="popup-icon-wrap"
+                        style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);display:flex;gap:0.5rem;align-items:center;pointer-events:none;">
+                        <i class="bi bi-exclamation-circle text-danger popup-error-icon"
+                            style="font-size:1.1em;display:none;"></i>
+                        <i class="bi bi-envelope icon-extra-medium text-dark-gray"></i>
+                    </span>
+                </div>
+                <div class="position-relative z-index-1 form-group form-textarea mt-15px mb-0 w-100">
+                    <textarea
+                        class="ps-0 border-radius-0px medium-gray bg-transparent border-color-extra-medium-gray form-control"
+                        name="comment" placeholder="Enter your message" rows="3"></textarea>
+                    <span class="form-icon text-dark-gray" style="position:absolute;right:0.75rem;top:1.5rem;"><i
+                            class="bi bi-chat-square-dots icon-extra-medium"></i></span>
+                    <input type="hidden" name="redirect" value="">
+                    <button
+                        class="btn btn-large btn-dark-gray btn-round-edge btn-box-shadow mb-20px mt-25px submit w-100"
+                        type="button" style="margin-left:0;" onclick="redirectToWhatsApp()">Send message</button>
+                    <div class="form-results mt-20px d-none"></div>
+                </div>
+            </form>
+            <div class="position-absolute bottom-0px right-minus-30px fs-350 lh-100 fw-900 text-yellow"
+                style="pointer-events:none;user-select:none;">&lt;</div>
         </div>
-        <!-- end cursor -->
-        <!-- start header -->
-        <header>
-            <!-- start navigation -->
-            <nav class="navbar navbar-expand-lg header-light header-transparent bg-transparent disable-fixed">
-                <div class="container-fluid">
-                    <div class="col-auto col-lg-2 me-lg-0 me-auto">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="images/iukmicrologo.PNG" alt="IUK Micro Com Logo" class="default-logo">
-                        </a>
-                    </div>
-                    <div class="col-auto menu-order position-static">
-                        <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav"> 
-                            <ul class="navbar-nav"> 
-                                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                                <li class="nav-item dropdown dropdown-with-icon">
-                                    <a href="#service" class="nav-link">Services</a>
-                                </li>
-                               
-                                
-                                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto col-lg-2 text-end">
-                        <div class="header-icon"> 
-                            <div class="header-social-icon icon">
-                                <a href="https://facebook.com/iukmicrocom" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://instagram.com/iukmicrocom" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="mailto:iukmicrocom@rediffmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                                <a href="https://iukmicrocom.in" target="_blank"><i class="fa-solid fa-globe"></i></a>
-                            </div>
-                        </div>  
-                    </div>
+    </div>
+    <!-- start cursor -->
+    <div class="cursor-page-inner">
+        <div class="circle-cursor circle-cursor-inner"></div>
+        <div class="circle-cursor circle-cursor-outer"></div>
+    </div>
+    <!-- end cursor -->
+    <!-- start header -->
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg header-light header-transparent bg-transparent disable-fixed">
+            <div class="container-fluid">
+                <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/iukmicrologo.PNG" alt="IUK Micro Com Logo" class="default-logo">
+                    </a>
                 </div>
-            </nav>
-            <!-- end navigation -->
-        </header>
-        <!-- end header -->
-        <!-- start banner -->
-        <section class="p-0 full-screen md-h-600px sm-h-600px ipad-top-space-margin background-position-center-top position-relative lg-overflow-hidden" style="background-image: url('images/demo-marketing-dot.svg')">
-            <div class="bg-gradient-black-green position-absolute left-0px top-0px h-100 w-100 z-index-minus-1"></div>
-            <div class="container h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col-lg-6 col-md-9 position-relative z-index-1 d-flex flex-column justify-content-center h-100">  
-                        <div class="fs-70 lg-fs-80 text-dark-gray lh-100 fw-400 mb-6 ls-minus-5px fancy-text-style-4" data-anime='{ "el": "childs", "opacity": [0, 1], "translateX": [-100, 0], "staggervalue": 300, "duration": 1000, "easing": "easeOutCubic" }'>
-                            <span class="d-inline-block">IUK MICRO COM,</span>
-                            <span class="fw-700 d-inline-block" data-fancy-text='{ "effect": "wave", "string": ["strategy", "approach", "planning"], "duration": 4000 }'></span>
-                        </div>
-                        <div class="fs-20 lh-34 xs-fs-19 mb-35px xs-mb-20px w-85 lg-w-95 sm-w-100 ls-minus-05px" data-anime='{ "opacity": [0, 1], "translateX": [-100, 0], "duration": 1000, "delay": 1000, "easing": "easeOutCubic" }'>We combine expertise, technology, and a client-focused approach to deliver exceptional marketing and telecalling solutions that drive real results.</div>
-                        <div data-anime='{ "el": "childs", "opacity": [0, 1], "translateX": [-100, 0], "staggervalue": -200, "duration": 1000, "delay": 1500, "easing": "easeOutCubic" }'>
-                            <a href="#service" target="_blank" class="btn btn-extra-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow me-20px fw-400 xs-mt-10px xs-mb-10px">
-                                <span> 
-                                    <span class="btn-text">Explore More</span>
-                                    <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                                    <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                                </span>
-                            </a>
-                            <a href="#contact" target="_blank" class="btn btn-extra-large btn-white btn-round-edge btn-box-shadow btn-round-edge fw-600 xs-mt-10px xs-mb-10px">Get started</a>
-                        </div>
-                        <div class="row w-100 position-absolute md-position-relative bottom-0 mb-14 md-mb-0 md-mt-40px sm-mt-30px xs-mt-20px align-items-center" data-anime='{ "el": "childs", "opacity": [0, 1], "staggervalue": -200, "translateX": [-100, 0], "duration": 1000, "delay": 1700, "easing": "easeOutQuad" }'> 
-                            <div class="col-xl-5 col-sm-6 icon-with-text-style-08 xs-mb-15px">
-                                <div class="feature-box feature-box-left-icon-middle overflow-hidden">
-                                    <div class="feature-box-icon feature-box-icon-rounded w-30px h-30px rounded-circle bg-jungle-green me-10px">
-                                        <i class="fa-solid fa-check text-white fs-12"></i>
-                                    </div>
-                                    <div class="feature-box-content last-paragraph-no-margin">
-                                        <span class="d-inline-block fs-17 fw-500 text-dark-gray">Conversion strategy</span>
-                                    </div>
-                                </div> 
-                            </div>
-                            <div class="col-xl-5 col-sm-6 icon-with-text-style-08">
-                                <div class="feature-box feature-box-left-icon-middle overflow-hidden">
-                                    <div class="feature-box-icon feature-box-icon-rounded w-30px h-30px rounded-circle bg-jungle-green me-10px">
-                                        <i class="fa-solid fa-check text-white fs-12"></i>
-                                    </div>
-                                    <div class="feature-box-content last-paragraph-no-margin">
-                                        <span class="d-inline-block fs-17 fw-500 text-dark-gray">Targeted growth</span>
-                                    </div>
-                                </div> 
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-3 align-self-end d-none d-md-inline-block">
-                        <div class="position-absolute right-0px bottom-minus-90px xxl-bottom-minus-30px md-bottom-minus-35px md-right-minus-250px lg-right-minus-150px w-50 xl-w-55 lg-w-65 md-w-75 overflow-hidden">
-                            <img src="images/hero2.png" class="w-100" alt="" data-anime='{ "opacity": [0, 1], "translateX": [100, 0], "duration": 1000, "delay": 200, "easing": "easeOutQuad" }'>
-                        </div>
-                        <!-- <div class="position-absolute right-0px top-0 me-3 mt-20 md-mt-45 lg-w-250px lg-mt-45 animation-float overflow-hidden d-none d-lg-inline-block" data-bottom-top="transform: translateY(-30px)" data-top-bottom="transform: translateY(80px)">
-                            <img src="images/demo-marketing-home-02.jpg" class="border-radius-6px box-shadow-quadruple-large" alt="" data-anime='{ "opacity": [0, 1], "clipPath": ["inset(0 0 200px 0)", "inset(0px 0px 0px 0px)"], "duration": 1000, "delay": 1000, "easing": "easeOutQuad" }'>
-                        </div> -->
-                    </div>
-                </div> 
-            </div>
-        </section>
-        <!-- end banner -->
-        <!-- start section --> 
-        <!-- end section -->
-        <!-- start section -->
-        <section class="half-section overlap-height position-relative overflow-hidden" id="about"> 
-            <div class="container overlap-gap-section">
-                <div class="row align-items-center justify-content-md-center">
-                    <div class="col-lg-6 col-md-10 position-relative md-mb-50px sm-mb-40px"> 
-                        <figure class="position-relative m-0 text-center" data-anime='{ "effect": "slide", "color": "#fff2ef", "direction":"lr", "easing": "easeOutQuad", "delay":50}'>
-                            <img src="images/newimg.jpg" alt="">
-                            <figcaption class="position-absolute bottom-90px left-0px" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 800, "delay": 1000, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                                <img src="https://via.placeholder.com/266x141" class="animation-float box-shadow-quadruple-large border-radius-6px" alt="">
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-12" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'> 
-                        <span class="fs-15 text-uppercase text-base-color fw-600 ls-1px mb-15px d-block">About us</span>
-                        <h3 class="fw-700 text-dark-gray ls-minus-1px fancy-text-style-4">Marketing solutions for all <span data-fancy-text='{ "effect": "rubber-band", "direction": "left", "string": ["business", "industry", "enterprise"] }'></span></h3>
-                        <div class="row mb-9">
-                            <div class="col-12 icon-with-text-style-01 mb-30px">
-                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                    <div class="feature-box-icon">
-                                        <img src="https://via.placeholder.com/90x84" alt="">
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <span class="d-inline-block text-dark-gray fw-600 mb-5px fs-18 ls-minus-05px">Expertise Meets Innovation</span>
-                                        <p class="w-80 lg-w-100">98% experienced team and 92% tech-driven solutions with an 88% client-first approach.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 icon-with-text-style-01">
-                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                    <div class="feature-box-icon">
-                                        <img src="https://via.placeholder.com/90x84" alt=""> 
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <span class="d-inline-block text-dark-gray fw-600 mb-5px fs-18 ls-minus-05px">Value-Driven Results</span>
-                                        <p class="w-80 lg-w-100">92% cost-effective services with a 83% strong focus on delivering real outcomes.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                        <a href="#" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow me-30px">
-                            <span> 
-                                <span class="btn-text">Learn more</span>
-                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                            </span>
-                        </a>
-                        <a href="#service" class="btn btn-link btn-hover-animation-switch btn-extra-large text-dark-gray fw-600 p-0">
-                            <span>
-                                <span class="btn-text">Our services</span>
-                                <span class="btn-icon"><i class="bi bi-caret-right-fill"></i></span>
-                                <span class="btn-icon"><i class="bi bi-caret-right-fill"></i></span>
-                            </span> 
-                        </a>
-                    </div> 
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-                <!-- start services summary section from PDF -->
-                <section class="half-section overlap-height position-relative overflow-hidden" style="background-color:#fff;">
-                    <div class="container overlap-gap-section">
-                        <div class="row align-items-center justify-content-md-center">
-                            <div class="col-lg-12" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                                <span class="fs-15 text-uppercase text-base-color fw-600 ls-1px mb-15px d-block">Our Services</span>
-                                <h3 class="fw-700 text-dark-gray ls-minus-1px fancy-text-style-4 mb-4">What We Offer</h3>
-                                <div class="accordion accordion-style-02" id="accordion-services" data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
-                                    <div class="accordion-item active-accordion">
-                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-01" aria-expanded="true" data-bs-parent="#accordion-services">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="bi bi-window icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Website Development</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-services-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-services">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
-                                                <ul class="ps-3 mb-0">
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Custom website design and development tailored to your brand.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Responsive and mobile-friendly interfaces.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Integration of CMS platforms (WordPress, Shopify, etc.).</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">SEO optimization and performance enhancements.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-02" aria-expanded="false" data-bs-parent="#accordion-services">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="bi bi-telephone icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Telecalling</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-services-02" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
-                                                <ul class="ps-3 mb-0">
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Professional outbound and inbound calling services.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Lead generation and client follow-ups.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Customer feedback collection and support.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">CRM integration for call tracking and reporting.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-03" aria-expanded="false" data-bs-parent="#accordion-services">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="bi bi-share icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Social Media Marketing</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-services-03" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
-                                                <ul class="ps-3 mb-0">
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Social media strategy and campaign planning.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Content creation and community management.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Paid ads management (Meta, LinkedIn, etc.).</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Monthly analytics and performance reporting.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-04" aria-expanded="false" data-bs-parent="#accordion-services">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="bi bi-pencil-square icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Content Creation</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-services-04" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
-                                                <ul class="ps-3 mb-0">
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Development of brand-specific content for all digital platforms.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Copywriting for websites, blogs, and ads.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Graphic design and short-form video creation.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Consistent messaging aligned with brand identity.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <div class="accordion-header border-bottom border-color-transparent">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-05" aria-expanded="false" data-bs-parent="#accordion-services">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="bi bi-bullseye icon-extra-medium text-base-color me-2"></i><span class="fw-600 fs-18 ls-minus-05px">Advertisement</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-services-05" class="accordion-collapse collapse" data-bs-parent="#accordion-services">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
-                                                <ul class="ps-3 mb-0">
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Online advertising strategy and execution.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Google Ads, Meta Ads, and local ad network setup.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Creative ad design and copywriting.</li>
-                                                    <li style="list-style-type: disc; margin-left: 1em;">Performance tracking and ROI reporting.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- end services summary section -->
-        <!-- start section -->
-        <section class="bg-very-light-gray md-pb-40px xs-pb-25px" id="service">
-            <div class="container-fluid overlap-section">
-                <div class="row position-relative mb-4 md-mb-5">
-                    <div class="col swiper swiper-width-auto text-center pb-30px md-pb-20px" data-slider-options='{ "slidesPerView": "auto", "spaceBetween":40, "speed": 10000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
-                        <div class="swiper-wrapper marquee-slide">
-                            <!-- start client item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">SOCIAL MARKETING</div>
-                            </div>
-                            <!-- end client item -->
-                            <!-- start client item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">TELECALLING</div>
-                            </div>
-                            <!-- end client item -->
-                            <!-- start client item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">DIGITAL MARKETING</div>
-                            </div>
-                            <!-- end client item --> 
-                            <!-- start client item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">SOCIAL MARKETING</div>
-                            </div>
-                            <!-- end client item --> 
-                            <!-- start client item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">TELECALLING</div>
-                            </div>
-                            <!-- end client item -->
-                            <!-- start client item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">DIGITAL MARKETING</div>
-                            </div>
-                            <!-- end client item --> 
-                        </div> 
-                    </div>  
-                </div>
-            </div>
-            <div class="container" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                <div class="row align-items-center mb-3">
-                    <div class="col-md-8 text-center text-md-start">
-                        <!-- filter navigation -->
-                        <ul class="portfolio-filter nav nav-tabs border-0">
-                            <li class="nav active"><a data-filter="*" href="#">All</a></li>
-                            <li class="nav"><a data-filter=".selected" href="#">Telecalling</a></li>
-                            <li class="nav"><a data-filter=".digital" href="#">Marketing</a></li>
-                            <li class="nav"><a data-filter=".branding" href="#">Design & Development</a></li>
-                            <!-- <li class="nav"><a data-filter=".web" href="#">Web</a></li> -->
-                        </ul>
-                        <!-- end filter navigation --> 
-                    </div>
-                    <div class="col-md-4 text-center text-md-end sm-mt-15px">
-                        <a href="#" class="btn btn-link btn-hover-animation-switch btn-extra-large text-dark-gray p-0 fw-600">
-                            <span>
-                                <span class="btn-text">Explore more</span>
-                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                            </span> 
-                        </a>
-                    </div>
-                </div> 
-                <div class="row">
-                    <div class="col-12 filter-content p-md-0">
-                        <ul class="portfolio-simple portfolio-wrapper grid-loading grid grid-3col xxl-grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-1col xs-grid-1col gutter-extra-large text-center">
-                            <li class="grid-sizer"></li>
-                            <!-- start portfolio item -->
-                            <li class="grid-item selected transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/outbound.jpg" alt="" />
-                                            <span class="custom-tooltip">Professional outbound calling services.<br>Increase your business reach.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Outbound Telecalling</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span> -->
-                                        <!-- <div class="d-inline-block">Branding</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item -->
-                            <!-- start portfolio item -->
-                            <li class="grid-item selected web transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/inbound.jpg" alt="" />
-                                            <span class="custom-tooltip">Expert inbound call handling.<br>Enhance customer satisfaction.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Inbound Telecalling</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Photography</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item -->
-                            <!-- start portfolio item -->
-                            <li class="grid-item web selected transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/market.jpg" alt="" />
-                                            <span class="custom-tooltip">Data-driven insights for growth.<br>Improve customer retention.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Market Research & Customer Retention</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Application</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item -->
-                            <!-- start portfolio item -->
-                            <li class="grid-item web digital transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/social.jpg" alt="" />
-                                            <span class="custom-tooltip">Engage your audience online.<br>Boost your brand presence.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Social Media Marketing</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Packaging</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item -->
-                            <!-- start portfolio item -->
-                            <li class="grid-item digital web transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/digital1.jpg" alt="" />
-                                            <span class="custom-tooltip">Comprehensive digital strategies.<br>Increase your online visibility.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Digital Marketing</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Graphics</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item -->
-                            <!-- start portfolio item -->
-                            <li class="grid-item web digital transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/email.jpg" alt="" />
-                                            <span class="custom-tooltip">Effective email campaigns.<br>Reach your customers directly.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Email Marketing</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Digital</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item --> 
-                             <!-- start portfolio item -->
-                            <li class="grid-item web branding transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/web3.jpg" alt="" />
-                                            <span class="custom-tooltip">Responsive and modern websites.<br>Enhance your digital presence.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Website Development</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Digital</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item --> 
-                             <!-- start portfolio item -->
-                            <li class="grid-item web branding transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/web1.jpg" alt="" />
-                                            <span class="custom-tooltip">Unique branding solutions.<br>Stand out in your market.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Brand Identity</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Digital</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item --> 
-                             <!-- start portfolio item -->
-                            <li class="grid-item web branding transition-inner-all">
-                                <div class="portfolio-box">
-                                    <div class="portfolio-image border-radius-6px">
-                                        <span class="img-tooltip-wrapper">
-                                            <img src="images/web2.jpg" alt="" />
-                                            <span class="custom-tooltip">Professional graphic services.<br>Enhance your visual identity.</span>
-                                        </span>
-                                    </div>
-                                    <div class="portfolio-caption pt-30px pb-30px">
-                                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Graphic Design</a>
-                                        <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span>
-                                        <div class="d-inline-block">Digital</div> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end portfolio item --> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start section -->
-        <section style="padding-bottom: 0px;"> 
-            <div class="container">
-                <div class="row align-items-center mb-6 xs-mb-12 justify-content-md-center"> 
-                    <div class="col-xl-5 col-lg-6 col-md-12 md-mb-50px" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'> 
-                        <span class="fs-15 text-uppercase text-base-color fw-600 mb-15px d-block ls-1px">Our business strategy</span>
-                        <h3 class="fw-700 mb-20px text-dark-gray ls-minus-1px">We Help Businesses Increase Revenue</h3>
-                        <div class="row justify-content-center mb-30px">
-                            <div class="col-12">
-                                <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
-                                    <!-- start accordion item -->
-                                    <div class="accordion-item active-accordion">
-                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01" aria-expanded="true" data-bs-parent="#accordion-style-02">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="feather icon-feather-minus"></i><span class="fw-600 fs-18 ls-minus-05px">Unique and Impactful Website Design</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-style-02-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-style-02">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
-                                                <p>We specialize in creating modern, responsive websites tailored to your brand. Our goal is to deliver user-friendly designs that attract visitors and drive conversions.
-
-                                                    </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end accordion item -->
-                                    <!-- start accordion item -->
-                                    <div class="accordion-item">
-                                        <div class="accordion-header border-bottom border-color-extra-medium-gray">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02" aria-expanded="false" data-bs-parent="#accordion-style-02">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="feather icon-feather-plus"></i><span class="fw-600 fs-18 ls-minus-05px">Ready to Start Marketing Today</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-style-02-02" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
-                                                <p>Our team is prepared to launch your marketing strategy immediately. With a focus on efficiency and results, we help you gain traction quickly.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end accordion item -->
-                                    <!-- start accordion item -->
-                                    <div class="accordion-item">
-                                        <div class="accordion-header border-bottom border-color-transparent">
-                                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03" aria-expanded="false" data-bs-parent="#accordion-style-02">
-                                                <div class="accordion-title mb-0 position-relative text-dark-gray">
-                                                    <i class="feather icon-feather-plus"></i><span class="fw-600 fs-18 ls-minus-05px">Solutions for Every Business</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="accordion-style-02-03" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
-                                            <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
-                                                <p>From startups to established companies, we offer scalable marketing solutions that fit businesses of all sizes and industries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end accordion item -->
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow me-30px">
-                            <span> 
-                                <span class="btn-text">How it works</span>
-                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 offset-xl-1 col-md-10 position-relative"> 
-                        <figure class="position-relative m-0 text-center" data-anime='{ "effect": "slide", "color": "#fff2ef", "direction":"rl", "easing": "easeOutQuad", "delay":50}'>
-                            <img src="images/hero3.jpg" alt="">
-                            <figcaption class="position-absolute bottom-90px right-0px" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 800, "delay": 1000, "staggervalue": 300, "easing": "easeOutQuad" }'> 
-                                <img src="https://via.placeholder.com/235x244" class="animation-float box-shadow-quadruple-large border-radius-6px" alt="">
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                     </div>
-        </section>
-        <!-- end section -->
-        <!-- start section -->
-        <section class="overflow-hidden" id="contact">
-            <div class="container" style="padding-top: 0;">
-                <div class="row justify-content-center align-items-center mb-2 sm-mb-10px"> 
-                    <div class="col-12" data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <span class="fs-15 text-uppercase text-base-color fw-600 mb-15px d-block ls-1px text-center">Get in touch with us</span>
-                        <h3 class="fw-700 text-dark-gray ls-minus-1px mb-50px sm-mb-35px text-center">We’re here to help. Let’s connect.</h3>
-                        <div class="d-flex flex-row justify-content-center align-items-stretch gap-5 flex-wrap">
-                            <!-- Visit -->
-                            <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto" style="min-width:220px;">
-                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                    <div class="feature-box-icon me-25px">
-                                        <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
-                                    </div>
-                                    <div class="feature-box-content last-paragraph-no-margin">
-                                        <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Visit our office:</span>
-                                        <p class="w-100">Parvathi Nagar 2nd Cross,Ballari Karnataka-583101.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Call -->
-                            <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto" style="min-width:220px;">
-                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                    <div class="feature-box-icon me-25px">
-                                        <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Call us directly:</span>
-                                        <div class="w-100 d-block">
-                                            <span class="d-block">Phone: <a href="tel:9448497505">+91 94484 97505</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Email -->
-                            <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto" style="min-width:220px;">
-                                <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
-                                    <div class="feature-box-icon me-25px">
-                                        <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Email us anytime:</span>
-                                        <div class="w-100 d-block">
-                                            <a href="mailto:iukmicrocom@rediffmail.com" style="font-size:1rem;">iukmicrocom@rediffmail.com</a><br/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Contact form moved to popup -->
-                </div> 
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-auto text-center text-md-end sm-mb-20px" data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <h6 class="text-dark-gray fw-600 mb-0 ls-minus-1px">Connect with social media </h6>
-                    </div>
-                    <div class="col-2 d-none d-lg-inline-block" data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <span class="w-100 h-1px bg-dark-gray opacity-2 d-flex mx-auto"></span>
-                    </div>
-                    <div class="col-md-auto elements-social social-icon-style-04 text-center text-md-start ps-lg-0" data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <ul class="large-icon dark">
-                            <li class="m-0"><a class="facebook" href="https://facebook.com/iukmicrocom" target="_blank"><i class="fa-brands fa-facebook-f"></i><span></span></a></li>
-                            <li class="m-0"><a class="instagram" href="https://instagram.com/iukmicrocom" target="_blank"><i class="fa-brands fa-instagram"></i><span></span></a></li>
-                            <li class="m-0"><a class="envelope" href="mailto:iukmicrocom@rediffmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span></span></a></li>
-                            <li class="m-0"><a class="globe" href="https://iukmicrocom.in" target="_blank"><i class="fa-solid fa-globe"></i><span></span></a></li>
-                        </ul>                  
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start map section -->
-        <section class="bg-very-light-gray p-0">
-            <div class="container-fluid"> 
-                <div class="row">
-                    <div class="col-12 p-0 text-center">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.095585798623!2d76.92254667488417!3d15.153094385401392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb711fa650b484b%3A0xfbd4d48517c8783e!2sIUK%20Micro%20Com!5e0!3m2!1sen!2sin!4v1763174443281!5m2!1sen!2sin" width="600" height="450" style="border:0; width:100%; max-width:900px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div> 
-                </div> 
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start footer -->
-        <footer class="bg-dark-gray background-position-center-top" style="background-image: url('images/demo-marketing-footer-dot.svg')"> 
-            <div class="container overlap-section">
-                <div class="row g-0 justify-content-center align-items-center bg-base-color border-radius-6px ps-7 pe-7 pt-4 pb-4 lg-p-30px sm-p-20px mb-7">
-                    <div class="col-lg-6 col-md-9 text-center text-lg-start md-mb-20px">
-                        <h4 class="text-white fw-600 mb-0 ls-minus-1px">Let's talk about how we can transform your business!</h4>
-                    </div>
-                    <div class="col-auto col-lg-5 icon-with-text-style-08 offset-lg-1">
-                        <div class="feature-box feature-box-left-icon-middle overflow-hidden">
-                            <div class="feature-box-icon feature-box-icon-rounded w-80px h-80px rounded-circle bg-dark-gray-transparent-light me-25px lg-me-20px">
-                                <i class="bi bi-envelope icon-very-medium text-white"></i>
-                            </div>
-                            <div class="feature-box-content last-paragraph-no-margin">
-                                
-                                <h5 class="d-inline-block fw-600 mb-0" style="font-size: xx-large;"><a href="mailto:iukmicrocom@rediffmail.com" class="text-dark-gray text-decoration-line-bottom-medium text-white-hover">iukmicrocom@rediffmail.com</a></h5> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container footer-dark text-center text-sm-start"> 
-                <div class="row mb-5 sm-mb-30px">
-                    <!-- start footer column -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column last-paragraph-no-margin md-mb-35px">
-                        <a href="index.html" class="footer-logo mb-25px xs-mb-20px d-inline-block">
-                            <img src="images/iukmicrologo.PNG" alt="IUK Micro Com Logo">
-                        </a>
-                        <div class="elements-social social-text-style-01 mt-auto">
-                            <ul class="small-icon light fw-500">
-                                <li><a class="facebook" href="https://facebook.com/iukmicrocom" target="_blank">Fb.</a></li>
-                                <li><a class="instagram" href="https://instagram.com/iukmicrocom" target="_blank">Ig.</a></li>
-                                <li><a class="envelope" href="mailto:iukmicrocom@rediffmail.com" target="_blank">Mail.</a></li>
-                                <li><a class="globe" href="https://iukmicrocom.in" target="_blank">Web.</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end footer column -->  
-                    <!-- start footer column -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin md-mb-35px"> 
-                        <span class="fs-16 fw-500 d-block text-white mb-5px">About Us:</span>
-                        <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">To empower businesses with impactful digital and telecalling marketing strategies.</p> 
-                                  </div>
-                    <!-- end footer column -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin md-mb-35px"> 
-                        <span class="fs-16 fw-500 d-block text-white mb-5px">Visit at:</span>
-                        <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">Parvathi Nagar, 2nd Cross, Ballari Karnataka-583101.</p> 
-                        <div class="d-inline-block"><i class="bi bi-telephone-outbound me-10px text-white align-middle"></i><a href="tel:9448497505">+91 94484 97505</a><div class="bg-white-transparent-very-light fw-500 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">Free</div></div> 
-                    </div>
-                   
-
-                </div> 
-                <div class="row align-items-center footer-bottom border-top border-color-transparent-white-light pt-30px g-0">
-                    <!-- start footer menu -->
-                    <div class="col-lg-8 ps-0 text-center text-lg-start md-mb-10px"> 
-                        <ul class="footer-navbar fs-15 lh-normal"> 
-                            <li class="nav-item active"><a href="index.html" class="nav-link ps-0">Home</a></li>
+                <div class="col-auto menu-order position-static">
+                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                            <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
-                            
+                            <li class="nav-item dropdown dropdown-with-icon">
+                                <a href="#service" class="nav-link">Services</a>
+                            </li>
+
+
                             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                         </ul>
-                    </div> 
-                    <!-- end footer menu -->
-                    <!-- start copyright -->
-                    <div class="col-lg-4 last-paragraph-no-margin text-center text-lg-end">
-                        <p class="fs-15">&copy; 2024  <a href="#" target="_blank" class="text-white text-decoration-line-bottom">IUKMICROCOM.</a>All rights reserved.</p>
                     </div>
-                    <!-- start copyright -->
                 </div>
-            </div>    
-        </footer>
-        <!-- end footer -->
-        <!-- start subscription popup -->
-        <!-- <div id="subscribe-popup" class="mfp-hide subscribe-popup">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-9 col-md-10 bg-white">
-                        <div class="row position-relative box-shadow-quadruple-large">
-                            <div class="col-lg-6 cover-background md-h-400px xs-h-300px" style="background-image:url('https://via.placeholder.com/800x770');"></div>
-                            <div class="col-lg-6 newsletter-popup p-8 pt-10 pb-10 lg-p-5 md-p-6 xs-p-8 position-relative">
-                                <h4 class="d-inline-block alt-font ls-minus-1px fw-700 text-dark-gray mb-15px">Subscribe to the latest updates!</h4>
-                                <p>Subscribe to our newsletters and get the latest business updates.</p>
-                                <div class="d-inline-block w-100 newsletter-style-05 position-relative mb-20px">
-                                    <form action="email-templates/subscribe-newsletter.php" method="post">
-                                        <input class="input-medium w-100 border-radius-4px form-control required mb-15px" type="email" name="email" placeholder="Enter your email address" />
-                                        <input type="hidden" name="redirect" value="">
-                                        <button type="submit" class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow w-100 submit">Subscribe now!</button>
-                                        <div class="form-results border-radius-4px mt-10px lh-normal pt-10px pb-10px ps-15px pe-15px fs-16 w-100 text-center position-absolute z-index-1 d-none"></div>
-                                    </form>
-                                </div>
-                                <label for="newsletter-off" class="fs-15"><input class="w-auto me-10px position-relative top-1px p-0" type="checkbox" id="newsletter-off" name="newsletter-off">Don't show this popup again</label>
-                            </div>
-                            <button title="Close (Esc)" type="button" class="mfp-close text-dark-gray"></button>
+                <div class="col-auto col-lg-2 text-end">
+                    <div class="header-icon">
+                        <div class="header-social-icon icon">
+                            <a href="https://facebook.com/iukmicrocom" target="_blank"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/iukmicrocom" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="mailto:iukmicrocom@rediffmail.com" target="_blank"><i
+                                    class="fa-solid fa-envelope"></i></a>
+                            <a href="https://iukmicrocom.in" target="_blank"><i class="fa-solid fa-globe"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
-        <!-- end subscription popup -->
-         <!-- start scroll progress -->
-        <div class="scroll-progress d-none d-xxl-block">
-          <a href="#" class="scroll-top" aria-label="scroll">
-            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
-          </a>
+        </nav>
+        <!-- end navigation -->
+    </header>
+    <!-- end header -->
+    <!-- start banner -->
+    <section
+        class="p-0 full-screen md-h-600px sm-h-600px ipad-top-space-margin background-position-center-top position-relative lg-overflow-hidden"
+        style="background-image: url('images/demo-marketing-dot.svg')">
+        <div class="bg-gradient-black-green position-absolute left-0px top-0px h-100 w-100 z-index-minus-1"></div>
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div
+                    class="col-lg-6 col-md-9 position-relative z-index-1 d-flex flex-column justify-content-center h-100">
+                    <div class="fs-70 lg-fs-80 text-dark-gray lh-100 fw-400 mb-6 ls-minus-5px fancy-text-style-4"
+                        data-anime='{ "el": "childs", "opacity": [0, 1], "translateX": [-100, 0], "staggervalue": 300, "duration": 1000, "easing": "easeOutCubic" }'>
+                        <span class="d-inline-block">IUK MICRO COM,</span>
+                        <span class="fw-700 d-inline-block"
+                            data-fancy-text='{ "effect": "wave", "string": ["strategy", "approach", "planning"], "duration": 4000 }'></span>
+                    </div>
+                    <div class="fs-20 lh-34 xs-fs-19 mb-35px xs-mb-20px w-85 lg-w-95 sm-w-100 ls-minus-05px"
+                        data-anime='{ "opacity": [0, 1], "translateX": [-100, 0], "duration": 1000, "delay": 1000, "easing": "easeOutCubic" }'>
+                        We combine expertise, technology, and a client-focused approach to deliver exceptional marketing
+                        and telecalling solutions that drive real results.</div>
+                    <div
+                        data-anime='{ "el": "childs", "opacity": [0, 1], "translateX": [-100, 0], "staggervalue": -200, "duration": 1000, "delay": 1500, "easing": "easeOutCubic" }'>
+                        <a href="#service" target="_blank"
+                            class="btn btn-extra-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow me-20px fw-400 xs-mt-10px xs-mb-10px">
+                            <span>
+                                <span class="btn-text">Explore More</span>
+                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                            </span>
+                        </a>
+                        <a href="#contact" target="_blank"
+                            class="btn btn-extra-large btn-white btn-round-edge btn-box-shadow btn-round-edge fw-600 xs-mt-10px xs-mb-10px">Get
+                            started</a>
+                    </div>
+                    <div class="row w-100 position-absolute md-position-relative bottom-0 mb-14 md-mb-0 md-mt-40px sm-mt-30px xs-mt-20px align-items-center"
+                        data-anime='{ "el": "childs", "opacity": [0, 1], "staggervalue": -200, "translateX": [-100, 0], "duration": 1000, "delay": 1700, "easing": "easeOutQuad" }'>
+                        <div class="col-xl-5 col-sm-6 icon-with-text-style-08 xs-mb-15px">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div
+                                    class="feature-box-icon feature-box-icon-rounded w-30px h-30px rounded-circle bg-jungle-green me-10px">
+                                    <i class="fa-solid fa-check text-white fs-12"></i>
+                                </div>
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span class="d-inline-block fs-17 fw-500 text-dark-gray">Conversion strategy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-sm-6 icon-with-text-style-08">
+                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                <div
+                                    class="feature-box-icon feature-box-icon-rounded w-30px h-30px rounded-circle bg-jungle-green me-10px">
+                                    <i class="fa-solid fa-check text-white fs-12"></i>
+                                </div>
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span class="d-inline-block fs-17 fw-500 text-dark-gray">Targeted growth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 col-md-3 align-self-end d-none d-md-inline-block">
+                    <div
+                        class="position-absolute right-0px bottom-minus-90px xxl-bottom-minus-30px md-bottom-minus-35px md-right-minus-250px lg-right-minus-150px w-50 xl-w-55 lg-w-65 md-w-75 overflow-hidden">
+                        <img src="images/hero2.png" class="w-100" alt=""
+                            data-anime='{ "opacity": [0, 1], "translateX": [100, 0], "duration": 1000, "delay": 200, "easing": "easeOutQuad" }'>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- end scroll progress -->
-        <!-- javascript libraries -->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/vendors.min.js"></script>
-                <script type="text/javascript" src="js/main.js"></script>
-                <script>
-                // Mobile tooltip support: show tooltip on tap
-                document.addEventListener('DOMContentLoaded', function() {
-                    function isMobile() {
-                        return window.innerWidth <= 767;
-                    }
-                    if (isMobile()) {
-                        document.querySelectorAll('.img-tooltip-wrapper').forEach(function(wrapper) {
-                            wrapper.addEventListener('click', function(e) {
-                                // Hide all other tooltips
-                                document.querySelectorAll('.img-tooltip-wrapper.show-tooltip').forEach(function(w) {
-                                    if (w !== wrapper) w.classList.remove('show-tooltip');
-                                });
-                                // Toggle this tooltip
-                                wrapper.classList.toggle('show-tooltip');
-                                e.stopPropagation();
-                            });
+    </section>
+    <!-- end banner -->
+    <!-- start section -->
+    <section class="half-section overlap-height position-relative overflow-hidden" id="about">
+        <div class="container overlap-gap-section">
+            <div class="row align-items-center justify-content-md-center">
+                <div class="col-lg-6 col-md-10 position-relative md-mb-50px sm-mb-40px">
+                    <figure class="position-relative m-0 text-center"
+                        data-anime='{ "effect": "slide", "color": "#fff2ef", "direction":"lr", "easing": "easeOutQuad", "delay":50}'>
+                        <img src="images/newimg.jpg" alt="">
+                        <figcaption class="position-absolute bottom-90px left-0px"
+                            data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 800, "delay": 1000, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <img src="https://via.placeholder.com/266x141"
+                                class="animation-float box-shadow-quadruple-large border-radius-6px" alt="">
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-5 offset-lg-1 col-md-12"
+                    data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 text-uppercase text-base-color fw-600 ls-1px mb-15px d-block">About us</span>
+                    <h3 class="fw-700 text-dark-gray ls-minus-1px fancy-text-style-4">Marketing solutions for all <span
+                            data-fancy-text='{ "effect": "rubber-band", "direction": "left", "string": ["business", "industry", "enterprise"] }'></span>
+                    </h3>
+                    <div class="row mb-9">
+                        <div class="col-12 icon-with-text-style-01 mb-30px">
+                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                <div class="feature-box-icon">
+                                    <img src="https://via.placeholder.com/90x84" alt="">
+                                </div>
+                                <div class="feature-box-content">
+                                    <span
+                                        class="d-inline-block text-dark-gray fw-600 mb-5px fs-18 ls-minus-05px">Expertise
+                                        Meets Innovation</span>
+                                    <p class="w-80 lg-w-100">98% experienced team and 92% tech-driven solutions with an
+                                        88% client-first approach.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 icon-with-text-style-01">
+                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                <div class="feature-box-icon">
+                                    <img src="https://via.placeholder.com/90x84" alt="">
+                                </div>
+                                <div class="feature-box-content">
+                                    <span
+                                        class="d-inline-block text-dark-gray fw-600 mb-5px fs-18 ls-minus-05px">Value-Driven
+                                        Results</span>
+                                    <p class="w-80 lg-w-100">92% cost-effective services with a 83% strong focus on
+                                        delivering real outcomes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow me-30px">
+                        <span>
+                            <span class="btn-text">Learn more</span>
+                            <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                            <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                        </span>
+                    </a>
+                    <a href="#service"
+                        class="btn btn-link btn-hover-animation-switch btn-extra-large text-dark-gray fw-600 p-0">
+                        <span>
+                            <span class="btn-text">Our services</span>
+                            <span class="btn-icon"><i class="bi bi-caret-right-fill"></i></span>
+                            <span class="btn-icon"><i class="bi bi-caret-right-fill"></i></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start services summary section from PDF -->
+    <section class="half-section overlap-height position-relative overflow-hidden" style="background-color:#fff;">
+        <div class="container overlap-gap-section">
+            <div class="row align-items-center justify-content-md-center">
+                <div class="col-lg-12"
+                    data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 text-uppercase text-base-color fw-600 ls-1px mb-15px d-block">Our Services</span>
+                    <h3 class="fw-700 text-dark-gray ls-minus-1px fancy-text-style-4 mb-4">What We Offer</h3>
+                    <div class="accordion accordion-style-02" id="accordion-services"
+                        data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
+                        <div class="accordion-item active-accordion">
+                            <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-01"
+                                    aria-expanded="true" data-bs-parent="#accordion-services">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                        <i class="bi bi-window icon-extra-medium text-base-color me-2"></i><span
+                                            class="fw-600 fs-18 ls-minus-05px">Website Development</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-services-01" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordion-services">
+                                <div
+                                    class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                    <ul class="ps-3 mb-0">
+                                        <li style="list-style-type: disc; margin-left: 1em;">Custom website design and
+                                            development tailored to your brand.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Responsive and
+                                            mobile-friendly interfaces.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Integration of CMS
+                                            platforms (WordPress, Shopify, etc.).</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">SEO optimization and
+                                            performance enhancements.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-02"
+                                    aria-expanded="false" data-bs-parent="#accordion-services">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                        <i class="bi bi-telephone icon-extra-medium text-base-color me-2"></i><span
+                                            class="fw-600 fs-18 ls-minus-05px">Telecalling</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-services-02" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion-services">
+                                <div
+                                    class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                    <ul class="ps-3 mb-0">
+                                        <li style="list-style-type: disc; margin-left: 1em;">Professional outbound and
+                                            inbound calling services.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Lead generation and client
+                                            follow-ups.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Customer feedback
+                                            collection and support.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">CRM integration for call
+                                            tracking and reporting.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-03"
+                                    aria-expanded="false" data-bs-parent="#accordion-services">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                        <i class="bi bi-share icon-extra-medium text-base-color me-2"></i><span
+                                            class="fw-600 fs-18 ls-minus-05px">Social Media Marketing</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-services-03" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion-services">
+                                <div
+                                    class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                    <ul class="ps-3 mb-0">
+                                        <li style="list-style-type: disc; margin-left: 1em;">Social media strategy and
+                                            campaign planning.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Content creation and
+                                            community management.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Paid ads management (Meta,
+                                            LinkedIn, etc.).</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Monthly analytics and
+                                            performance reporting.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-04"
+                                    aria-expanded="false" data-bs-parent="#accordion-services">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                        <i class="bi bi-pencil-square icon-extra-medium text-base-color me-2"></i><span
+                                            class="fw-600 fs-18 ls-minus-05px">Content Creation</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-services-04" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion-services">
+                                <div
+                                    class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                    <ul class="ps-3 mb-0">
+                                        <li style="list-style-type: disc; margin-left: 1em;">Development of
+                                            brand-specific content for all digital platforms.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Copywriting for websites,
+                                            blogs, and ads.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Graphic design and
+                                            short-form video creation.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Consistent messaging
+                                            aligned with brand identity.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header border-bottom border-color-transparent">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-services-05"
+                                    aria-expanded="false" data-bs-parent="#accordion-services">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                        <i class="bi bi-bullseye icon-extra-medium text-base-color me-2"></i><span
+                                            class="fw-600 fs-18 ls-minus-05px">Advertisement</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-services-05" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion-services">
+                                <div
+                                    class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
+                                    <ul class="ps-3 mb-0">
+                                        <li style="list-style-type: disc; margin-left: 1em;">Online advertising strategy
+                                            and execution.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Google Ads, Meta Ads, and
+                                            local ad network setup.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Creative ad design and
+                                            copywriting.</li>
+                                        <li style="list-style-type: disc; margin-left: 1em;">Performance tracking and
+                                            ROI reporting.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end services summary section -->
+    <!-- start section -->
+    <section class="bg-very-light-gray md-pb-40px xs-pb-25px" id="service">
+        <div class="container-fluid overlap-section">
+            <div class="row position-relative mb-4 md-mb-5">
+                <div class="col swiper swiper-width-auto text-center pb-30px md-pb-20px"
+                    data-slider-options='{ "slidesPerView": "auto", "spaceBetween":40, "speed": 10000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
+                    <div class="swiper-wrapper marquee-slide">
+                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">SOCIAL
+                                MARKETING</div>
+                        </div>
+                        <!-- end client item -->
+                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">
+                                TELECALLING</div>
+                        </div>
+                        <!-- end client item -->
+                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">DIGITAL
+                                MARKETING</div>
+                        </div>
+                        <!-- end client item -->
+                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">
+                                SOCIAL MARKETING</div>
+                        </div>
+                        <!-- end client item -->
+                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 text-dark-gray fw-600 ls-minus-5px">
+                                TELECALLING</div>
+                        </div>
+                        <!-- end client item -->
+                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="fs-150 lg-fs-130 md-fs-110 sm-fs-90 fw-600 text-outline text-outline-color-extra-medium-gray ls-minus-5px">
+                                DIGITAL MARKETING</div>
+                        </div>
+                        <!-- end client item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+            <div class="row align-items-center mb-3">
+                <div class="col-md-8 text-center text-md-start">
+                    <!-- filter navigation -->
+                    <ul class="portfolio-filter nav nav-tabs border-0">
+                        <li class="nav active"><a data-filter="*" href="#">All</a></li>
+                        <li class="nav"><a data-filter=".selected" href="#">Telecalling</a></li>
+                        <li class="nav"><a data-filter=".digital" href="#">Marketing</a></li>
+                        <li class="nav"><a data-filter=".branding" href="#">Design & Development</a></li>
+                        <!-- <li class="nav"><a data-filter=".web" href="#">Web</a></li> -->
+                    </ul>
+                    <!-- end filter navigation -->
+                </div>
+                <div class="col-md-4 text-center text-md-end sm-mt-15px">
+                    <a href="#"
+                        class="btn btn-link btn-hover-animation-switch btn-extra-large text-dark-gray p-0 fw-600">
+                        <span>
+                            <span class="btn-text">Explore more</span>
+                            <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                            <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 filter-content p-md-0">
+                    <ul
+                        class="portfolio-simple portfolio-wrapper grid-loading grid grid-3col xxl-grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-1col xs-grid-1col gutter-extra-large text-center">
+                        <li class="grid-sizer"></li>
+                        <!-- start portfolio item -->
+                        <li class="grid-item selected transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/outbound.jpg" alt="" />
+                                        <span class="custom-tooltip">Professional outbound calling services.<br>Increase
+                                            your business reach.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Outbound
+                                        Telecalling</a>
+                                    <!-- <span class="d-inline-block align-middle w-10px separator-line-1px bg-light-gray ms-10px me-10px"></span> -->
+                                    <!-- <div class="d-inline-block">Branding</div> -->
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item selected web transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/inbound.jpg" alt="" />
+                                        <span class="custom-tooltip">Expert inbound call handling.<br>Enhance customer
+                                            satisfaction.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Inbound
+                                        Telecalling</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item web selected transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/market.jpg" alt="" />
+                                        <span class="custom-tooltip">Data-driven insights for growth.<br>Improve
+                                            customer retention.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Market Research &
+                                        Customer Retention</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item web digital transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/social.jpg" alt="" />
+                                        <span class="custom-tooltip">Engage your audience online.<br>Boost your brand
+                                            presence.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item digital web transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/digital1.jpg" alt="" />
+                                        <span class="custom-tooltip">Comprehensive digital strategies.<br>Increase your
+                                            online visibility.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Digital Marketing</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item web digital transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/email.jpg" alt="" />
+                                        <span class="custom-tooltip">Effective email campaigns.<br>Reach your customers
+                                            directly.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Email Marketing</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item web branding transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/web3.jpg" alt="" />
+                                        <span class="custom-tooltip">Responsive and modern websites.<br>Enhance your
+                                            digital presence.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Website
+                                        Development</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item web branding transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/web1.jpg" alt="" />
+                                        <span class="custom-tooltip">Unique branding solutions.<br>Stand out in your
+                                            market.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Brand Identity</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                        <!-- start portfolio item -->
+                        <li class="grid-item web branding transition-inner-all">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image border-radius-6px">
+                                    <span class="img-tooltip-wrapper">
+                                        <img src="images/web2.jpg" alt="" />
+                                        <span class="custom-tooltip">Professional graphic services.<br>Enhance your
+                                            visual identity.</span>
+                                    </span>
+                                </div>
+                                <div class="portfolio-caption pt-30px pb-30px">
+                                    <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">Graphic Design</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end portfolio item -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section style="padding-bottom: 0px;">
+        <div class="container">
+            <div class="row align-items-center mb-6 xs-mb-12 justify-content-md-center">
+                <div class="col-xl-5 col-lg-6 col-md-12 md-mb-50px"
+                    data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 text-uppercase text-base-color fw-600 mb-15px d-block ls-1px">Our business
+                        strategy</span>
+                    <h3 class="fw-700 mb-20px text-dark-gray ls-minus-1px">We Help Businesses Increase Revenue</h3>
+                    <div class="row justify-content-center mb-30px">
+                        <div class="col-12">
+                            <div class="accordion accordion-style-02" id="accordion-style-02"
+                                data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
+                                <!-- start accordion item -->
+                                <div class="accordion-item active-accordion">
+                                    <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01"
+                                            aria-expanded="true" data-bs-parent="#accordion-style-02">
+                                            <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                <i class="feather icon-feather-minus"></i><span
+                                                    class="fw-600 fs-18 ls-minus-05px">Unique and Impactful Website
+                                                    Design</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div id="accordion-style-02-01" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordion-style-02">
+                                        <div
+                                            class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                            <p>We specialize in creating modern, responsive websites tailored to your
+                                                brand. Our goal is to deliver user-friendly designs that attract
+                                                visitors and drive conversions.
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end accordion item -->
+                                <!-- start accordion item -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header border-bottom border-color-extra-medium-gray">
+                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02"
+                                            aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                            <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                <i class="feather icon-feather-plus"></i><span
+                                                    class="fw-600 fs-18 ls-minus-05px">Ready to Start Marketing
+                                                    Today</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div id="accordion-style-02-02" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordion-style-02">
+                                        <div
+                                            class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray">
+                                            <p>Our team is prepared to launch your marketing strategy immediately. With
+                                                a focus on efficiency and results, we help you gain traction quickly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end accordion item -->
+                                <!-- start accordion item -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header border-bottom border-color-transparent">
+                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03"
+                                            aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                            <div class="accordion-title mb-0 position-relative text-dark-gray">
+                                                <i class="feather icon-feather-plus"></i><span
+                                                    class="fw-600 fs-18 ls-minus-05px">Solutions for Every
+                                                    Business</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div id="accordion-style-02-03" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordion-style-02">
+                                        <div
+                                            class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
+                                            <p>From startups to established companies, we offer scalable marketing
+                                                solutions that fit businesses of all sizes and industries.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end accordion item -->
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow me-30px">
+                        <span>
+                            <span class="btn-text">How it works</span>
+                            <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                            <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-lg-6 offset-xl-1 col-md-10 position-relative">
+                    <figure class="position-relative m-0 text-center"
+                        data-anime='{ "effect": "slide", "color": "#fff2ef", "direction":"rl", "easing": "easeOutQuad", "delay":50}'>
+                        <img src="images/hero3.jpg" alt="">
+                        <figcaption class="position-absolute bottom-90px right-0px"
+                            data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 800, "delay": 1000, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <img src="https://via.placeholder.com/235x244"
+                                class="animation-float box-shadow-quadruple-large border-radius-6px" alt="">
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="overflow-hidden" id="contact">
+        <div class="container" style="padding-top: 0;">
+            <div class="row justify-content-center align-items-center mb-2 sm-mb-10px">
+                <div class="col-12"
+                    data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 text-uppercase text-base-color fw-600 mb-15px d-block ls-1px text-center">Get in
+                        touch with us</span>
+                    <h3 class="fw-700 text-dark-gray ls-minus-1px mb-50px sm-mb-35px text-center">We’re here to help.
+                        Let’s connect.</h3>
+                    <div class="d-flex flex-row justify-content-center align-items-stretch gap-5 flex-wrap">
+                        <!-- Visit -->
+                        <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto"
+                            style="min-width:220px;">
+                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                <div class="feature-box-icon me-25px">
+                                    <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
+                                </div>
+                                <div class="feature-box-content last-paragraph-no-margin">
+                                    <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Visit our
+                                        office:</span>
+                                    <p class="w-100">Parvathi Nagar 2nd Cross,Ballari Karnataka-583101.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Call -->
+                        <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto"
+                            style="min-width:220px;">
+                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                <div class="feature-box-icon me-25px">
+                                    <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
+                                </div>
+                                <div class="feature-box-content">
+                                    <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Call us
+                                        directly:</span>
+                                    <div class="w-100 d-block">
+                                        <span class="d-block">Phone: <a href="tel:9448497505">+91 94484 97505</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="icon-with-text-style-01 mb-10 md-mb-35px col-12 col-md-auto"
+                            style="min-width:220px;">
+                            <div class="feature-box feature-box-left-icon last-paragraph-no-margin">
+                                <div class="feature-box-icon me-25px">
+                                    <img src="https://via.placeholder.com/160x160" class="h-80px" alt="">
+                                </div>
+                                <div class="feature-box-content">
+                                    <span class="d-block text-dark-gray fw-600 fs-18 ls-minus-05px mb-5px">Email us
+                                        anytime:</span>
+                                    <div class="w-100 d-block">
+                                        <a href="mailto:iukmicrocom@rediffmail.com"
+                                            style="font-size:1rem;">iukmicrocom@rediffmail.com</a><br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact form moved to popup -->
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-auto text-center text-md-end sm-mb-20px"
+                    data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <h6 class="text-dark-gray fw-600 mb-0 ls-minus-1px">Connect with social media </h6>
+                </div>
+                <div class="col-2 d-none d-lg-inline-block"
+                    data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="w-100 h-1px bg-dark-gray opacity-2 d-flex mx-auto"></span>
+                </div>
+                <div class="col-md-auto elements-social social-icon-style-04 text-center text-md-start ps-lg-0"
+                    data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <ul class="large-icon dark">
+                        <li class="m-0"><a class="facebook" href="https://facebook.com/iukmicrocom" target="_blank"><i
+                                    class="fa-brands fa-facebook-f"></i><span></span></a></li>
+                        <li class="m-0"><a class="instagram" href="https://instagram.com/iukmicrocom" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i><span></span></a></li>
+                        <li class="m-0"><a class="envelope" href="mailto:iukmicrocom@rediffmail.com" target="_blank"><i
+                                    class="fa-solid fa-envelope"></i><span></span></a></li>
+                        <li class="m-0"><a class="globe" href="https://iukmicrocom.in" target="_blank"><i
+                                    class="fa-solid fa-globe"></i><span></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start map section -->
+    <section class="bg-very-light-gray p-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 p-0 text-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.095585798623!2d76.92254667488417!3d15.153094385401392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb711fa650b484b%3A0xfbd4d48517c8783e!2sIUK%20Micro%20Com!5e0!3m2!1sen!2sin!4v1763174443281!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0; width:100%; max-width:900px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start footer -->
+    <footer class="bg-dark-gray background-position-center-top"
+        style="background-image: url('images/demo-marketing-footer-dot.svg')">
+        <div class="container overlap-section">
+            <div
+                class="row g-0 justify-content-center align-items-center bg-base-color border-radius-6px ps-7 pe-7 pt-4 pb-4 lg-p-30px sm-p-20px mb-7">
+                <div class="col-lg-6 col-md-9 text-center text-lg-start md-mb-20px">
+                    <h4 class="text-white fw-600 mb-0 ls-minus-1px">Let's talk about how we can transform your business!
+                    </h4>
+                </div>
+                <div class="col-auto col-lg-5 icon-with-text-style-08 offset-lg-1">
+                    <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                        <div
+                            class="feature-box-icon feature-box-icon-rounded w-80px h-80px rounded-circle bg-dark-gray-transparent-light me-25px lg-me-20px">
+                            <i class="bi bi-envelope icon-very-medium text-white"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+
+                            <h5 class="d-inline-block fw-600 mb-0" style="font-size: xx-large;"><a
+                                    href="mailto:iukmicrocom@rediffmail.com"
+                                    class="text-dark-gray text-decoration-line-bottom-medium text-white-hover">iukmicrocom@rediffmail.com</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-dark text-center text-sm-start">
+            <div class="row mb-5 sm-mb-30px">
+                <!-- start footer column -->
+                <div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column last-paragraph-no-margin md-mb-35px">
+                    <a href="index.html" class="footer-logo mb-25px xs-mb-20px d-inline-block">
+                        <img src="images/iukmicrologo.PNG" alt="IUK Micro Com Logo">
+                    </a>
+                    <div class="elements-social social-text-style-01 mt-auto">
+                        <ul class="small-icon light fw-500">
+                            <li><a class="facebook" href="https://facebook.com/iukmicrocom" target="_blank">Fb.</a></li>
+                            <li><a class="instagram" href="https://instagram.com/iukmicrocom" target="_blank">Ig.</a>
+                            </li>
+                            <li><a class="envelope" href="mailto:iukmicrocom@rediffmail.com" target="_blank">Mail.</a>
+                            </li>
+                            <li><a class="globe" href="https://iukmicrocom.in" target="_blank">Web.</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin md-mb-35px">
+                    <span class="fs-16 fw-500 d-block text-white mb-5px">About Us:</span>
+                    <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">To empower businesses with impactful digital and
+                        telecalling marketing strategies.</p>
+                </div>
+                <!-- end footer column -->
+                <div class="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin md-mb-35px">
+                    <span class="fs-16 fw-500 d-block text-white mb-5px">Visit at:</span>
+                    <p class="w-85 lg-w-95 xs-w-60 xs-mx-auto mb-10px">Parvathi Nagar, 2nd Cross, Ballari
+                        Karnataka-583101.</p>
+                    <div class="d-inline-block"><i
+                            class="bi bi-telephone-outbound me-10px text-white align-middle"></i><a
+                            href="tel:9448497505">+91 94484 97505</a>
+                        <div
+                            class="bg-white-transparent-very-light fw-500 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">
+                            Free</div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div
+                class="row align-items-center footer-bottom border-top border-color-transparent-white-light pt-30px g-0">
+                <!-- start footer menu -->
+                <div class="col-lg-8 ps-0 text-center text-lg-start md-mb-10px">
+                    <ul class="footer-navbar fs-15 lh-normal">
+                        <li class="nav-item active"><a href="index.html" class="nav-link ps-0">Home</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
+
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- end footer menu -->
+                <!-- start copyright -->
+                <div class="col-lg-4 last-paragraph-no-margin text-center text-lg-end">
+                    <p class="fs-15">&copy; 2024 <a href="#" target="_blank"
+                            class="text-white text-decoration-line-bottom">IUKMICROCOM.</a>All rights reserved.</p>
+                </div>
+                <!-- start copyright -->
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+    <!-- end scroll progress -->
+    <!-- javascript libraries -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        // Mobile tooltip support: show tooltip on tap
+        document.addEventListener('DOMContentLoaded', function () {
+            function isMobile() {
+                return window.innerWidth <= 767;
+            }
+            if (isMobile()) {
+                document.querySelectorAll('.img-tooltip-wrapper').forEach(function (wrapper) {
+                    wrapper.addEventListener('click', function (e) {
+                        // Hide all other tooltips
+                        document.querySelectorAll('.img-tooltip-wrapper.show-tooltip').forEach(function (w) {
+                            if (w !== wrapper) w.classList.remove('show-tooltip');
                         });
-                        // Hide tooltip when clicking outside
-                        document.addEventListener('click', function() {
-                            document.querySelectorAll('.img-tooltip-wrapper.show-tooltip').forEach(function(w) {
-                                w.classList.remove('show-tooltip');
-                            });
-                        });
-                    }
+                        // Toggle this tooltip
+                        wrapper.classList.toggle('show-tooltip');
+                        e.stopPropagation();
+                    });
                 });
-                </script>
-            <script>
-            // Show popup on page load
-            window.addEventListener('DOMContentLoaded', function() {
-                var popup = document.getElementById('contact-popup');
-                if (popup) {
-                    popup.style.display = 'flex';
-                    popup.style.justifyContent = 'center';
-                    popup.style.alignItems = 'center';
-                }
-                var closeBtn = document.getElementById('close-contact-popup');
-                if (closeBtn) {
-                    closeBtn.onclick = function() {
-                        popup.style.display = 'none';
-                    };
-                }
-            });
-
-            // Show error icon only if field is invalid and blurred
-            function validatePopupField(input) {
-                var iconWrap = input.parentElement.querySelector('.popup-icon-wrap');
-                if (!iconWrap) return;
-                var errorIcon = iconWrap.querySelector('.popup-error-icon');
-                // Remove browser's default validation icon by using type="text" for email
-                if (!input.value.trim() || (input.name === 'email' && !/^\S+@\S+\.\S+$/.test(input.value.trim()))) {
-                    if (errorIcon) errorIcon.style.display = 'inline-block';
-                } else {
-                    if (errorIcon) errorIcon.style.display = 'none';
-                }
+                // Hide tooltip when clicking outside
+                document.addEventListener('click', function () {
+                    document.querySelectorAll('.img-tooltip-wrapper.show-tooltip').forEach(function (w) {
+                        w.classList.remove('show-tooltip');
+                    });
+                });
             }
-
-            function redirectToWhatsApp() {
-                var name = document.getElementById('popup-name').value.trim();
-                var email = document.getElementById('popup-email').value.trim();
-                var message = document.querySelector('textarea[name="comment"]').value.trim();
-                if (!name || !email) {
-                    alert('Please fill in your name and email.');
-                    return;
-                }
-                var text = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
-                var url = 'https://wa.me/919448497505?text=' + encodeURIComponent(text);
-                window.open(url, '_blank');
+        });
+    </script>
+    <script>
+        // Show popup on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            var popup = document.getElementById('contact-popup');
+            if (popup) {
+                popup.style.display = 'flex';
+                popup.style.justifyContent = 'center';
+                popup.style.alignItems = 'center';
             }
-            </script>
-    </body>
+            var closeBtn = document.getElementById('close-contact-popup');
+            if (closeBtn) {
+                closeBtn.onclick = function () {
+                    popup.style.display = 'none';
+                };
+            }
+        });
+
+        // Show error icon only if field is invalid and blurred
+        function validatePopupField(input) {
+            var iconWrap = input.parentElement.querySelector('.popup-icon-wrap');
+            if (!iconWrap) return;
+            var errorIcon = iconWrap.querySelector('.popup-error-icon');
+            // Remove browser's default validation icon by using type="text" for email
+            if (!input.value.trim() || (input.name === 'email' && !/^\S+@\S+\.\S+$/.test(input.value.trim()))) {
+                if (errorIcon) errorIcon.style.display = 'inline-block';
+            } else {
+                if (errorIcon) errorIcon.style.display = 'none';
+            }
+        }
+
+        function redirectToWhatsApp() {
+            var name = document.getElementById('popup-name').value.trim();
+            var email = document.getElementById('popup-email').value.trim();
+            var message = document.querySelector('textarea[name="comment"]').value.trim();
+            if (!name || !email) {
+                alert('Please fill in your name and email.');
+                return;
+            }
+            var text = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
+            var url = 'https://wa.me/919448497505?text=' + encodeURIComponent(text);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
 </html>
